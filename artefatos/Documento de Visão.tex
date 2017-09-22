@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Documento de Visão}
+
+\begin{document}
+\maketitle
+Este é o documento de visão referente ao projeto de Gerência de Disciplinas. O objetivo deste documento é definir as principais necessidades do projeto a ser desenvolvido do ponto de vista dos stakeholders em termos de funcionalidade. Contendo uma definição básica dos requisitos centrais, este define uma base contratual para os requisitos técnicos.
+\section{Posicionamento}
+\subsection{Oportunidade de Negócio}
+O sistema produzido deverá ser volátil o suficiente para que possa ser adaptado para utilização por outras instituições educacionais, de modo que seria viável a comercialização posterior deste a entidades interessadas.
+\subsection{Problem Statement}
+Este projeto representa uma oportunidade de simplificar o processo de administração de disciplinas de forma que este se torne mais automático (e por consequência mais ágil) de forma a permitir a todos os atores envolvidos, sejam estes professores, alunos ou funcionários administrativos, economia de tempo e energia que poderá ser direcionada a um aumento de produtividade.
+\section{Funcionalidades do Produto}
+\subsection{Cadastro de Disciplinas}
+A funcionalidade mais básica deste projeto é o cadastro de disciplinas no sistema, pois a disciplina cadastrada será utilizada por todas as demais funcionalidades. O cadastro de disciplinas consiste na definição da disciplina de uma forma que possa ser interpretada pelo software, além como outras entidades periféricas a esta, como o local e hora onde esta será lecionada.
+\subsection{Atribuição de Professores para Disciplinas}
+O software deve ser capaz de associar disciplinas aos professores responsáveis pelas mesmas. O professor associado a uma disciplina deve ser ter a habilidade de alterar certos atributos relacionados à disciplina, tais como as notas dos alunos inscritos.
+\subsection{Gerência de Colisões para Disciplinas}
+O software deve ser capaz de detectar colisões entre disciplinas cadastradas como ocorrendo em um mesmo local ou sendo ministradas por um mesmo professor em um mesmo horário, alertando um responsável caso o mesmo ocorra.
+\subsection{Visualização das Disciplinas Oferecidas}
+O software deve possibilitar aos envolvidos visualizar as disciplinas relacionadas aos mesmos;
+Alunos devem poder visualizar disciplinas oferecidas nas quais os mesmos podem se inscrever.
+Professores devem poder visualizar disciplinas que os mesmos estarão lecionando no período.
+Todos devem ter acesso a uma visualização de todas as disciplinas oferecidas.
+Além disso, certas funcionalidades de busca devem estar disponíveis a fim de permitir a usuários encontrar disciplinas a partir de informações básicas sobre estas.
+\subsection{Gerência de Critérios de Inscrição em Disciplina}
+O software deve possibilitar a descrição de regras de inscrição, critérios associados a disciplinas que serão utilizados para vetar ou aprovar automaticamente a inscrição de um aluno na disciplina. 
+\subsection{Inscrição de Aluno em Disciplina}
+O software deve ser capaz de realizar a inscrição de um aluno em uma disciplina. Essa inscrição deve ocorrer em 3 etapas:
+O aluno faz o pedido de sua inscrição na disciplina. O pedido vai para o processo de aprovação.
+O pedido passa pelo processo de aprovação.
+Caso o aluno não possa cursar a disciplina (falta requisito, etc.) o sistema deve recusar sua inscrição automaticamente e o aluno notificado da falha.
+Caso a inscrição passe nos critérios de aprovação automática, esta deve ser aceita automaticamente e o aluno e professores responsáveis notificados da inscrição.
+Caso a inscrição passe nos critérios de veto mais não nos de aprovação automática, a inscrição deve ser repassada ao professor responsável para que este aceite ou recuse esta.
+O resultado é informado ao aluno e professor responsável.
+\end{document}
