@@ -42,11 +42,15 @@ entity Local{
 
 entity Inscricao{
 	status EstadoInscricao
-    nota Long min(0) max(10)
+    nota Nota
 }
 
 enum EstadoDisciplina {
     INSCRICAO, TRANCAMENTO, CORRENTE, FINALIZADA
+}
+
+enum Nota{
+	A, B, C, D
 }
 
 enum TipoDisciplina {
