@@ -1,0 +1,79 @@
+entity Disciplina {
+    codigo String required maxlength(6)
+    nome String
+	estado EstadoDisciplina
+	trimestre Integer
+    cargaHoraria Integer
+    creditos Integer
+	tipo TipoDisciplina
+}
+
+entity TimeSlot {
+	dia DiaSemana required
+    // Horas de Início e Fim em horário militar
+    horaInicio Long required min(0) max(2400)
+    horaFim Long required min(0) max(2400)
+}
+
+entity Programa{
+	sigla String
+    nome String
+}
+
+entity Pessoa{
+	nome String required
+    email String
+}
+
+entity Professor{
+	siape Long
+}
+
+entity Aluno{
+	matricula Long
+}
+
+entity Local{
+	centro String
+    bloco String
+    sala String
+    externo Boolean
+}
+
+entity Inscricao{
+	status EstadoInscricao
+    nota Long min(0) max(10)
+}
+
+enum EstadoDisciplina {
+    INSCRICAO, TRANCAMENTO, CORRENTE, FINALIZADA
+}
+
+enum TipoDisciplina {
+	CURSO, PESQUISA
+}
+
+enum DiaSemana{
+	DOMINGO, SEGUNDA, TERCA, QUARTA, QUINTA, SEXTA, SABADO
+}
+
+enum EstadoInscricao{
+	NORMAL, PENDENTE, TRANCADA, RECUSADA
+}
+
+relationship OneToOne{
+	Disciplina{professor} to Professor,
+    Disciplina{programa} to Programa,
+    Disciplina{local} to Local,
+    Inscricao{aluno} to Aluno,
+    Inscricao{disciplina} to Disciplina,
+    Aluno{pessoa} to Pessoa,
+    Professor{pessoa} to Pessoa
+}
+
+relationship OneToMany{
+	Disciplina{horario} to TimeSlot,
+    Disciplina{requisito} to Disciplina
+}
+
+#title: jdl-disciplina
