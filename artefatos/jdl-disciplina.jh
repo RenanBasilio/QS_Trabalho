@@ -40,6 +40,10 @@ entity Local{
     externo Boolean
 }
 
+entity Turma{
+	
+}
+
 entity Inscricao{
 	status EstadoInscricao
     nota Nota
@@ -68,15 +72,16 @@ enum EstadoInscricao{
 relationship OneToOne{
 	Disciplina{professor} to Professor,
     Disciplina{programa} to Programa,
-    Disciplina{local} to Local,
     Inscricao{aluno} to Aluno,
-    Inscricao{disciplina} to Disciplina,
+    Inscricao{turma} to Turma,
     Aluno{pessoa} to Pessoa,
-    Professor{pessoa} to Pessoa
+    Professor{pessoa} to Pessoa,
+    Turma{disciplina} to Disciplina,
+    Turma{sala} to Local
 }
 
 relationship OneToMany{
-	Disciplina{horario} to TimeSlot,
+	Turma{horario} to TimeSlot,
     Disciplina{requisito} to Disciplina
 }
 
