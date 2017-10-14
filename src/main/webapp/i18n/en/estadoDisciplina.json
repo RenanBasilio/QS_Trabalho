@@ -1,0 +1,11 @@
+{
+    "qsTrabalhoDisciplinaApp": {
+        "EstadoDisciplina" : {
+            "null": "",
+            "INSCRICAO": "INSCRICAO",
+            "TRANCAMENTO": "TRANCAMENTO",
+            "CORRENTE": "CORRENTE",
+            "FINALIZADA": "FINALIZADA"
+        }
+    }
+}

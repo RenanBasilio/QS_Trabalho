@@ -40,6 +40,17 @@ public class CacheConfiguration {
             cm.createCache(com.g1.disciplina.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.g1.disciplina.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.g1.disciplina.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.g1.disciplina.domain.Disciplina.class.getName(), jcacheConfiguration);
+            cm.createCache(com.g1.disciplina.domain.Disciplina.class.getName() + ".requisitos", jcacheConfiguration);
+            cm.createCache(com.g1.disciplina.domain.TimeSlot.class.getName(), jcacheConfiguration);
+            cm.createCache(com.g1.disciplina.domain.Programa.class.getName(), jcacheConfiguration);
+            cm.createCache(com.g1.disciplina.domain.Pessoa.class.getName(), jcacheConfiguration);
+            cm.createCache(com.g1.disciplina.domain.Professor.class.getName(), jcacheConfiguration);
+            cm.createCache(com.g1.disciplina.domain.Aluno.class.getName(), jcacheConfiguration);
+            cm.createCache(com.g1.disciplina.domain.Local.class.getName(), jcacheConfiguration);
+            cm.createCache(com.g1.disciplina.domain.Turma.class.getName(), jcacheConfiguration);
+            cm.createCache(com.g1.disciplina.domain.Turma.class.getName() + ".horarios", jcacheConfiguration);
+            cm.createCache(com.g1.disciplina.domain.Inscricao.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

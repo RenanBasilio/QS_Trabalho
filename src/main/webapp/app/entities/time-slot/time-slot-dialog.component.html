@@ -1,0 +1,96 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTimeSlotLabel" jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.home.createOrEditLabel">Create or edit a Time Slot</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!timeSlot.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="timeSlot.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.dia" for="field_dia">Dia</label>
+            <select class="form-control" name="dia" [(ngModel)]="timeSlot.dia" id="field_dia"  required>
+                <option value="DOMINGO">{{'qsTrabalhoDisciplinaApp.DiaSemana.DOMINGO' | translate}}</option>
+                <option value="SEGUNDA">{{'qsTrabalhoDisciplinaApp.DiaSemana.SEGUNDA' | translate}}</option>
+                <option value="TERCA">{{'qsTrabalhoDisciplinaApp.DiaSemana.TERCA' | translate}}</option>
+                <option value="QUARTA">{{'qsTrabalhoDisciplinaApp.DiaSemana.QUARTA' | translate}}</option>
+                <option value="QUINTA">{{'qsTrabalhoDisciplinaApp.DiaSemana.QUINTA' | translate}}</option>
+                <option value="SEXTA">{{'qsTrabalhoDisciplinaApp.DiaSemana.SEXTA' | translate}}</option>
+                <option value="SABADO">{{'qsTrabalhoDisciplinaApp.DiaSemana.SABADO' | translate}}</option>
+            </select>
+            <div [hidden]="!(editForm.controls.dia?.dirty && editForm.controls.dia?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.dia?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.horaInicio" for="field_horaInicio">Hora Inicio</label>
+            <input type="number" class="form-control" name="horaInicio" id="field_horaInicio"
+                [(ngModel)]="timeSlot.horaInicio" required min="0" max="2400" />
+            <div [hidden]="!(editForm.controls.horaInicio?.dirty && editForm.controls.horaInicio?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.horaInicio?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.horaInicio?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.horaInicio?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 2400 }">
+                    This field cannot be more than 2400.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.horaInicio?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.horaFim" for="field_horaFim">Hora Fim</label>
+            <input type="number" class="form-control" name="horaFim" id="field_horaFim"
+                [(ngModel)]="timeSlot.horaFim" required min="0" max="2400" />
+            <div [hidden]="!(editForm.controls.horaFim?.dirty && editForm.controls.horaFim?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.horaFim?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.horaFim?.errors?.min" jhiTranslate="entity.validation.min" translateValues="{ min: 0 }">
+                    This field should be at least 0.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.horaFim?.errors?.max" jhiTranslate="entity.validation.max" translateValues="{ max: 2400 }">
+                    This field cannot be more than 2400.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.horaFim?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.turma" for="field_turma">Turma</label>
+            <select class="form-control" id="field_turma" name="turma" [(ngModel)]="timeSlot.turma" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="turmaOption.id === timeSlot.turma?.id ? timeSlot.turma : turmaOption" *ngFor="let turmaOption of turmas; trackBy: trackTurmaById">{{turmaOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

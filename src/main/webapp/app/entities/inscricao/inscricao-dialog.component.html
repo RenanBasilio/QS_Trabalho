@@ -1,0 +1,57 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myInscricaoLabel" jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.home.createOrEditLabel">Create or edit a Inscricao</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!inscricao.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="inscricao.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.status" for="field_status">Status</label>
+            <select class="form-control" name="status" [(ngModel)]="inscricao.status" id="field_status" >
+                <option value="NORMAL">{{'qsTrabalhoDisciplinaApp.EstadoInscricao.NORMAL' | translate}}</option>
+                <option value="PENDENTE">{{'qsTrabalhoDisciplinaApp.EstadoInscricao.PENDENTE' | translate}}</option>
+                <option value="TRANCADA">{{'qsTrabalhoDisciplinaApp.EstadoInscricao.TRANCADA' | translate}}</option>
+                <option value="RECUSADA">{{'qsTrabalhoDisciplinaApp.EstadoInscricao.RECUSADA' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.nota" for="field_nota">Nota</label>
+            <select class="form-control" name="nota" [(ngModel)]="inscricao.nota" id="field_nota" >
+                <option value="A">{{'qsTrabalhoDisciplinaApp.Nota.A' | translate}}</option>
+                <option value="B">{{'qsTrabalhoDisciplinaApp.Nota.B' | translate}}</option>
+                <option value="C">{{'qsTrabalhoDisciplinaApp.Nota.C' | translate}}</option>
+                <option value="D">{{'qsTrabalhoDisciplinaApp.Nota.D' | translate}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.aluno" for="field_aluno">Aluno</label>
+            <select class="form-control" id="field_aluno" name="aluno" [(ngModel)]="inscricao.aluno">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="alunoOption.id === inscricao.aluno?.id ? inscricao.aluno : alunoOption" *ngFor="let alunoOption of alunos; trackBy: trackAlunoById">{{alunoOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.turma" for="field_turma">Turma</label>
+            <select class="form-control" id="field_turma" name="turma" [(ngModel)]="inscricao.turma">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="turmaOption.id === inscricao.turma?.id ? inscricao.turma : turmaOption" *ngFor="let turmaOption of turmas; trackBy: trackTurmaById">{{turmaOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,11 @@
+{
+    "qsTrabalhoDisciplinaApp": {
+        "EstadoInscricao" : {
+            "null": "",
+            "NORMAL": "NORMAL",
+            "PENDENTE": "PENDENTE",
+            "TRANCADA": "TRANCADA",
+            "RECUSADA": "RECUSADA"
+        }
+    }
+}

@@ -1,0 +1,97 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myDisciplinaLabel" jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.home.createOrEditLabel">Create or edit a Disciplina</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!disciplina.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="disciplina.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.codigo" for="field_codigo">Codigo</label>
+            <input type="text" class="form-control" name="codigo" id="field_codigo"
+                [(ngModel)]="disciplina.codigo" required maxlength="6" />
+            <div [hidden]="!(editForm.controls.codigo?.dirty && editForm.controls.codigo?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.codigo?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.codigo?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 6 }">
+                   This field cannot be longer than 6 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.nome" for="field_nome">Nome</label>
+            <input type="text" class="form-control" name="nome" id="field_nome"
+                [(ngModel)]="disciplina.nome"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.estado" for="field_estado">Estado</label>
+            <select class="form-control" name="estado" [(ngModel)]="disciplina.estado" id="field_estado" >
+                <option value="INSCRICAO">{{'qsTrabalhoDisciplinaApp.EstadoDisciplina.INSCRICAO' | translate}}</option>
+                <option value="TRANCAMENTO">{{'qsTrabalhoDisciplinaApp.EstadoDisciplina.TRANCAMENTO' | translate}}</option>
+                <option value="CORRENTE">{{'qsTrabalhoDisciplinaApp.EstadoDisciplina.CORRENTE' | translate}}</option>
+                <option value="FINALIZADA">{{'qsTrabalhoDisciplinaApp.EstadoDisciplina.FINALIZADA' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.trimestre" for="field_trimestre">Trimestre</label>
+            <input type="number" class="form-control" name="trimestre" id="field_trimestre"
+                [(ngModel)]="disciplina.trimestre"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.cargaHoraria" for="field_cargaHoraria">Carga Horaria</label>
+            <input type="number" class="form-control" name="cargaHoraria" id="field_cargaHoraria"
+                [(ngModel)]="disciplina.cargaHoraria"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.creditos" for="field_creditos">Creditos</label>
+            <input type="number" class="form-control" name="creditos" id="field_creditos"
+                [(ngModel)]="disciplina.creditos"  />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.tipo" for="field_tipo">Tipo</label>
+            <select class="form-control" name="tipo" [(ngModel)]="disciplina.tipo" id="field_tipo" >
+                <option value="CURSO">{{'qsTrabalhoDisciplinaApp.TipoDisciplina.CURSO' | translate}}</option>
+                <option value="PESQUISA">{{'qsTrabalhoDisciplinaApp.TipoDisciplina.PESQUISA' | translate}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.professor" for="field_professor">Professor</label>
+            <select class="form-control" id="field_professor" name="professor" [(ngModel)]="disciplina.professor">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="professorOption.id === disciplina.professor?.id ? disciplina.professor : professorOption" *ngFor="let professorOption of professors; trackBy: trackProfessorById">{{professorOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.programa" for="field_programa">Programa</label>
+            <select class="form-control" id="field_programa" name="programa" [(ngModel)]="disciplina.programa">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="programaOption.id === disciplina.programa?.id ? disciplina.programa : programaOption" *ngFor="let programaOption of programas; trackBy: trackProgramaById">{{programaOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.disciplina" for="field_disciplina">Disciplina</label>
+            <select class="form-control" id="field_disciplina" name="disciplina" [(ngModel)]="disciplina.disciplina" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="disciplinaOption.id === disciplina.disciplina?.id ? disciplina.disciplina : disciplinaOption" *ngFor="let disciplinaOption of disciplinas; trackBy: trackDisciplinaById">{{disciplinaOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

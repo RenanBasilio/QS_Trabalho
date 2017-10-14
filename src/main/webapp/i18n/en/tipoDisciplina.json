@@ -1,0 +1,9 @@
+{
+    "qsTrabalhoDisciplinaApp": {
+        "TipoDisciplina" : {
+            "null": "",
+            "CURSO": "CURSO",
+            "PESQUISA": "PESQUISA"
+        }
+    }
+}

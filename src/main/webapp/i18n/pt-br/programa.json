@@ -1,0 +1,22 @@
+{
+    "qsTrabalhoDisciplinaApp": {
+        "programa" : {
+            "home": {
+                "title": "Programas",
+                "createLabel": "Criar novo Programa",
+                "createOrEditLabel": "Criar ou editar Programa"
+            },
+            "created": "Um novo Programa foi criado com o identificador {{ param }}",
+            "updated": "Um Programa foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Programa foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Programa {{ id }}?"
+            },
+            "detail": {
+                "title": "Programa"
+            },
+            "sigla": "Sigla",
+            "nome": "Nome"
+        }
+    }
+}

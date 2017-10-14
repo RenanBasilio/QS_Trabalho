@@ -1,0 +1,39 @@
+
+<div *ngIf="timeSlot">
+    <h2><span jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.detail.title">Time Slot</span> {{timeSlot.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.dia">Dia</span></dt>
+        <dd>
+            <span jhiTranslate="{{'qsTrabalhoDisciplinaApp.DiaSemana.' + timeSlot.dia}}">{{timeSlot.dia}}</span>
+        </dd>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.horaInicio">Hora Inicio</span></dt>
+        <dd>
+            <span>{{timeSlot.horaInicio}}</span>
+        </dd>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.horaFim">Hora Fim</span></dt>
+        <dd>
+            <span>{{timeSlot.horaFim}}</span>
+        </dd>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.turma">Turma</span></dt>
+        <dd>
+            <div *ngIf="timeSlot.turma">
+                <a [routerLink]="['/turma', timeSlot.turma?.id]">{{timeSlot.turma?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'time-slot/'+ timeSlot.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

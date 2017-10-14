@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "centro",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bloco",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sala",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "externo",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20171014184836",
+    "entityTableName": "local",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

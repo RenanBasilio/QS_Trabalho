@@ -1,0 +1,62 @@
+<div>
+    <h2>
+        <span jhiTranslate="qsTrabalhoDisciplinaApp.aluno.home.title">Alunos</span>
+        <button class="btn btn-primary float-right jh-create-entity create-aluno" [routerLink]="['/', { outlets: { popup: ['aluno-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="qsTrabalhoDisciplinaApp.aluno.home.createLabel">
+            Create new Aluno
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="alunos">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.aluno.matricula">Matricula</span></th>
+            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.aluno.pessoa">Pessoa</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let aluno of alunos ;trackBy: trackId">
+                <td><a [routerLink]="['../aluno', aluno.id ]">{{aluno.id}}</a></td>
+                <td>{{aluno.matricula}}</td>
+                <td>
+                    <div *ngIf="aluno.pessoa">
+                        <a [routerLink]="['../pessoa', aluno.pessoa?.id ]" >{{aluno.pessoa?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../aluno', aluno.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'aluno/'+ aluno.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'aluno/'+ aluno.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

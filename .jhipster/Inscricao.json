@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "aluno",
+            "otherEntityName": "aluno",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "inscricao"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "turma",
+            "otherEntityName": "turma",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "inscricao"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "status",
+            "fieldType": "EstadoInscricao",
+            "fieldValues": "NORMAL,PENDENTE,TRANCADA,RECUSADA"
+        },
+        {
+            "fieldName": "nota",
+            "fieldType": "Nota",
+            "fieldValues": "A,B,C,D"
+        }
+    ],
+    "changelogDate": "20171014184838",
+    "entityTableName": "inscricao",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}
