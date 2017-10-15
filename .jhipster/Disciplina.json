@@ -18,16 +18,12 @@
             "otherEntityRelationshipName": "disciplina"
         },
         {
-            "relationshipName": "disciplina",
-            "otherEntityName": "disciplina",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        },
-        {
-            "relationshipType": "one-to-many",
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
             "relationshipName": "requisito",
             "otherEntityName": "disciplina",
-            "otherEntityRelationshipName": "disciplina"
+            "otherEntityField": "id",
+            "ownerSide": true
         }
     ],
     "fields": [

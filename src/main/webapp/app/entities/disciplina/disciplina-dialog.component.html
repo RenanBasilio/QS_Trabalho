@@ -79,10 +79,9 @@
             </select>
         </div>
         <div class="form-group">
-            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.disciplina" for="field_disciplina">Disciplina</label>
-            <select class="form-control" id="field_disciplina" name="disciplina" [(ngModel)]="disciplina.disciplina" >
-                <option [ngValue]="null"></option>
-                <option [ngValue]="disciplinaOption.id === disciplina.disciplina?.id ? disciplina.disciplina : disciplinaOption" *ngFor="let disciplinaOption of disciplinas; trackBy: trackDisciplinaById">{{disciplinaOption.id}}</option>
+            <label jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.requisito" for="field_requisito">Requisito</label>
+            <select class="form-control" id="field_requisito" multiple name="requisito" [(ngModel)]="disciplina.requisitos">
+                <option [ngValue]="getSelected(disciplina.requisitos, disciplinaOption)" *ngFor="let disciplinaOption of disciplinas; trackBy: trackDisciplinaById">{{disciplinaOption.id}}</option>
             </select>
         </div>
     </div>

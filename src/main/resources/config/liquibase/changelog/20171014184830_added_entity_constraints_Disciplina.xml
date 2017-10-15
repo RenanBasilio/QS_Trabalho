@@ -20,11 +20,16 @@
                                  referencedColumnNames="id"
                                  referencedTableName="programa"/>
 
-        <addForeignKeyConstraint baseColumnNames="disciplina_id"
-                                 baseTableName="disciplina"
-                                 constraintName="fk_disciplina_disciplina_id"
+        <addForeignKeyConstraint baseColumnNames="disciplinas_id"
+                                 baseTableName="disciplina_requisito"
+                                 constraintName="fk_disciplina_requisito_disciplinas_id"
                                  referencedColumnNames="id"
                                  referencedTableName="disciplina"/>
-
+        <addForeignKeyConstraint baseColumnNames="requisitos_id"
+                                 baseTableName="disciplina_requisito"
+                                 constraintName="fk_disciplina_requisito_requisitos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="disciplina"/>
+        
     </changeSet>
 </databaseChangeLog>

@@ -121,6 +121,17 @@ export class DisciplinaDialogComponent implements OnInit {
     trackDisciplinaById(index: number, item: Disciplina) {
         return item.id;
     }
+
+    getSelected(selectedVals: Array<any>, option: any) {
+        if (selectedVals) {
+            for (let i = 0; i < selectedVals.length; i++) {
+                if (option.id === selectedVals[i].id) {
+                    return selectedVals[i];
+                }
+            }
+        }
+        return option;
+    }
 }
 
 @Component({

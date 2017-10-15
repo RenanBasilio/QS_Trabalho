@@ -24,7 +24,6 @@ export class Disciplina implements BaseEntity {
         public tipo?: TipoDisciplina,
         public professor?: BaseEntity,
         public programa?: BaseEntity,
-        public disciplina?: BaseEntity,
         public requisitos?: BaseEntity[],
     ) {
     }

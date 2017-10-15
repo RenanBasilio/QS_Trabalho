@@ -51,6 +51,8 @@ public class CacheConfiguration {
             cm.createCache(com.g1.disciplina.domain.Turma.class.getName(), jcacheConfiguration);
             cm.createCache(com.g1.disciplina.domain.Turma.class.getName() + ".horarios", jcacheConfiguration);
             cm.createCache(com.g1.disciplina.domain.Inscricao.class.getName(), jcacheConfiguration);
+            cm.createCache(com.g1.disciplina.domain.Disciplina.class.getName() + ".disciplinas", jcacheConfiguration);
+            cm.createCache(com.g1.disciplina.domain.Disciplina.class.getName() + ".dependentes", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

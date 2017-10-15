@@ -24,7 +24,6 @@
             "tipo": "Tipo",
             "professor": "Professor",
             "programa": "Programa",
-            "disciplina": "Disciplina",
             "requisito": "Requisito"
         }
     }

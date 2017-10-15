@@ -85,7 +85,7 @@ public class DisciplinaResource {
     @Timed
     public List<Disciplina> getAllDisciplinas() {
         log.debug("REST request to get all Disciplinas");
-        return disciplinaRepository.findAll();
+        return disciplinaRepository.findAllWithEagerRelationships();
         }
 
     /**
@@ -98,7 +98,7 @@ public class DisciplinaResource {
     @Timed
     public ResponseEntity<Disciplina> getDisciplina(@PathVariable Long id) {
         log.debug("REST request to get Disciplina : {}", id);
-        Disciplina disciplina = disciplinaRepository.findOne(id);
+        Disciplina disciplina = disciplinaRepository.findOneWithEagerRelationships(id);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(disciplina));
     }
 

@@ -44,11 +44,11 @@
                 <a [routerLink]="['/programa', disciplina.programa?.id]">{{disciplina.programa?.id}}</a>
             </div>
         </dd>
-        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.disciplina">Disciplina</span></dt>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.requisito">Requisito</span></dt>
         <dd>
-            <div *ngIf="disciplina.disciplina">
-                <a [routerLink]="['/disciplina', disciplina.disciplina?.id]">{{disciplina.disciplina?.id}}</a>
-            </div>
+            <span *ngFor="let requisito of disciplina.requisitos; let last = last">
+                <a [routerLink]="['/disciplina', requisito?.id ]">{{requisito.id}}</a>{{last ? '' : ', '}}
+            </span>
         </dd>
     </dl>
 

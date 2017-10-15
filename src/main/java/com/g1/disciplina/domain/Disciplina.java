@@ -1,6 +1,5 @@
 package com.g1.disciplina.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -62,12 +61,11 @@ public class Disciplina implements Serializable {
     @JoinColumn(unique = true)
     private Programa programa;
 
-    @ManyToOne
-    private Disciplina disciplina;
-
-    @OneToMany(mappedBy = "disciplina")
-    @JsonIgnore
+    @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JoinTable(name = "disciplina_requisito",
+               joinColumns = @JoinColumn(name="disciplinas_id", referencedColumnName="id"),
+               inverseJoinColumns = @JoinColumn(name="requisitos_id", referencedColumnName="id"))
     private Set<Disciplina> requisitos = new HashSet<>();
 
     // jhipster-needle-entity-add-field - Jhipster will add fields here, do not remove
@@ -196,19 +194,6 @@ public class Disciplina implements Serializable {
         this.programa = programa;
     }
 
-    public Disciplina getDisciplina() {
-        return disciplina;
-    }
-
-    public Disciplina disciplina(Disciplina disciplina) {
-        this.disciplina = disciplina;
-        return this;
-    }
-
-    public void setDisciplina(Disciplina disciplina) {
-        this.disciplina = disciplina;
-    }
-
     public Set<Disciplina> getRequisitos() {
         return requisitos;
     }
@@ -220,13 +205,11 @@ public class Disciplina implements Serializable {
 
     public Disciplina addRequisito(Disciplina disciplina) {
         this.requisitos.add(disciplina);
-        disciplina.setDisciplina(this);
         return this;
     }
 
     public Disciplina removeRequisito(Disciplina disciplina) {
         this.requisitos.remove(disciplina);
-        disciplina.setDisciplina(null);
         return this;
     }
 

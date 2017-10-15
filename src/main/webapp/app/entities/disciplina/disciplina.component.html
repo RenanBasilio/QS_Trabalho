@@ -26,7 +26,7 @@
             <th><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.tipo">Tipo</span></th>
             <th><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.professor">Professor</span></th>
             <th><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.programa">Programa</span></th>
-            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.disciplina">Disciplina</span></th>
+            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.requisito">Requisito</span></th>
             <th></th>
             </tr>
             </thead>
@@ -51,9 +51,9 @@
                     </div>
                 </td>
                 <td>
-                    <div *ngIf="disciplina.disciplina">
-                        <a [routerLink]="['../disciplina', disciplina.disciplina?.id ]" >{{disciplina.disciplina?.id}}</a>
-                    </div>
+                    <span *ngFor="let requisito of disciplina.requisitos; let last = last">
+                            <a class="form-control-static" [routerLink]="['../disciplina', requisito?.id ]">{{requisito.id}}</a>{{last ? '' : ', '}}
+                        </span>
                 </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">

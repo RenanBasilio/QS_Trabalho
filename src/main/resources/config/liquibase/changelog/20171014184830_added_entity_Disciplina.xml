@@ -54,12 +54,19 @@
             </column>            <column name="programa_id" type="bigint">
                 <constraints unique="true" nullable="true" />
             </column>
-            <column name="disciplina_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
-
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
+        
+        <createTable tableName="disciplina_requisito">
+            <column name="requisitos_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="disciplinas_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="disciplinas_id, requisitos_id" tableName="disciplina_requisito"/>
         
     </changeSet>
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->

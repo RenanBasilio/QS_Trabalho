@@ -81,8 +81,12 @@ relationship OneToOne{
 }
 
 relationship OneToMany{
-	Turma{horario} to TimeSlot,
-    Disciplina{requisito} to Disciplina
+	Turma{horario} to TimeSlot{turma}
+}
+
+
+relationship ManyToMany{
+	Disciplina{requisito} to Disciplina
 }
 
 #title: jdl-disciplina
