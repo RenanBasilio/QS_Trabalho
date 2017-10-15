@@ -9,8 +9,6 @@ import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { TimeSlot } from './time-slot.model';
 import { TimeSlotPopupService } from './time-slot-popup.service';
 import { TimeSlotService } from './time-slot.service';
-import { Turma, TurmaService } from '../turma';
-import { ResponseWrapper } from '../../shared';
 
 @Component({
     selector: 'jhi-time-slot-dialog',
@@ -21,21 +19,16 @@ export class TimeSlotDialogComponent implements OnInit {
     timeSlot: TimeSlot;
     isSaving: boolean;
 
-    turmas: Turma[];
-
     constructor(
         public activeModal: NgbActiveModal,
         private alertService: JhiAlertService,
         private timeSlotService: TimeSlotService,
-        private turmaService: TurmaService,
         private eventManager: JhiEventManager
     ) {
     }
 
     ngOnInit() {
         this.isSaving = false;
-        this.turmaService.query()
-            .subscribe((res: ResponseWrapper) => { this.turmas = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
     }
 
     clear() {
@@ -76,10 +69,6 @@ export class TimeSlotDialogComponent implements OnInit {
 
     private onError(error) {
         this.alertService.error(error.message, null, null);
-    }
-
-    trackTurmaById(index: number, item: Turma) {
-        return item.id;
     }
 }
 

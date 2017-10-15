@@ -16,12 +16,6 @@
         <dd>
             <span>{{timeSlot.horaFim}}</span>
         </dd>
-        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.turma">Turma</span></dt>
-        <dd>
-            <div *ngIf="timeSlot.turma">
-                <a [routerLink]="['/turma', timeSlot.turma?.id]">{{timeSlot.turma?.id}}</a>
-            </div>
-        </dd>
     </dl>
 
     <button type="submit"

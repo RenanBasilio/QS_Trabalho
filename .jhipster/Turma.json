@@ -18,10 +18,12 @@
             "otherEntityRelationshipName": "turma"
         },
         {
-            "relationshipType": "one-to-many",
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
             "relationshipName": "horario",
             "otherEntityName": "timeSlot",
-            "otherEntityRelationshipName": "turma"
+            "otherEntityField": "id",
+            "ownerSide": true
         }
     ],
     "fields": [],

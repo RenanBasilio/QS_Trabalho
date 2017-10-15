@@ -11,6 +11,7 @@ import { TurmaPopupService } from './turma-popup.service';
 import { TurmaService } from './turma.service';
 import { Disciplina, DisciplinaService } from '../disciplina';
 import { Local, LocalService } from '../local';
+import { TimeSlot, TimeSlotService } from '../time-slot';
 import { ResponseWrapper } from '../../shared';
 
 @Component({
@@ -26,12 +27,15 @@ export class TurmaDialogComponent implements OnInit {
 
     salas: Local[];
 
+    timeslots: TimeSlot[];
+
     constructor(
         public activeModal: NgbActiveModal,
         private alertService: JhiAlertService,
         private turmaService: TurmaService,
         private disciplinaService: DisciplinaService,
         private localService: LocalService,
+        private timeSlotService: TimeSlotService,
         private eventManager: JhiEventManager
     ) {
     }
@@ -64,6 +68,8 @@ export class TurmaDialogComponent implements OnInit {
                         }, (subRes: ResponseWrapper) => this.onError(subRes.json));
                 }
             }, (res: ResponseWrapper) => this.onError(res.json));
+        this.timeSlotService.query()
+            .subscribe((res: ResponseWrapper) => { this.timeslots = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
     }
 
     clear() {
@@ -112,6 +118,21 @@ export class TurmaDialogComponent implements OnInit {
 
     trackLocalById(index: number, item: Local) {
         return item.id;
+    }
+
+    trackTimeSlotById(index: number, item: TimeSlot) {
+        return item.id;
+    }
+
+    getSelected(selectedVals: Array<any>, option: any) {
+        if (selectedVals) {
+            for (let i = 0; i < selectedVals.length; i++) {
+                if (option.id === selectedVals[i].id) {
+                    return selectedVals[i];
+                }
+            }
+        }
+        return option;
     }
 }
 

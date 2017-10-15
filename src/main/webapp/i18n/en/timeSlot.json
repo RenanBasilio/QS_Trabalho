@@ -17,8 +17,7 @@
             },
             "dia": "Dia",
             "horaInicio": "Hora Inicio",
-            "horaFim": "Hora Fim",
-            "turma": "Turma"
+            "horaFim": "Hora Fim"
         }
     }
 }

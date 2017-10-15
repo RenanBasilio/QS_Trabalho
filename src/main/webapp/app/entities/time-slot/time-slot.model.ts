@@ -16,7 +16,6 @@ export class TimeSlot implements BaseEntity {
         public dia?: DiaSemana,
         public horaInicio?: number,
         public horaFim?: number,
-        public turma?: BaseEntity,
     ) {
     }
 }

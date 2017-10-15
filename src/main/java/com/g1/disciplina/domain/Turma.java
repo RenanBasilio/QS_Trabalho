@@ -1,6 +1,5 @@
 package com.g1.disciplina.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -32,9 +31,11 @@ public class Turma implements Serializable {
     @JoinColumn(unique = true)
     private Local sala;
 
-    @OneToMany(mappedBy = "turma")
-    @JsonIgnore
+    @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JoinTable(name = "turma_horario",
+               joinColumns = @JoinColumn(name="turmas_id", referencedColumnName="id"),
+               inverseJoinColumns = @JoinColumn(name="horarios_id", referencedColumnName="id"))
     private Set<TimeSlot> horarios = new HashSet<>();
 
     // jhipster-needle-entity-add-field - Jhipster will add fields here, do not remove
@@ -83,13 +84,11 @@ public class Turma implements Serializable {
 
     public Turma addHorario(TimeSlot timeSlot) {
         this.horarios.add(timeSlot);
-        timeSlot.setTurma(this);
         return this;
     }
 
     public Turma removeHorario(TimeSlot timeSlot) {
         this.horarios.remove(timeSlot);
-        timeSlot.setTurma(null);
         return this;
     }
 

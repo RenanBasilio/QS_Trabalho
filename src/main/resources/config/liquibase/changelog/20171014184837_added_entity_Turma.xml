@@ -29,6 +29,17 @@
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
         
+        <createTable tableName="turma_horario">
+            <column name="horarios_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="turmas_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="turmas_id, horarios_id" tableName="turma_horario"/>
+        
     </changeSet>
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
 </databaseChangeLog>

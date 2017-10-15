@@ -19,6 +19,7 @@
             <th><span jhiTranslate="global.field.id">ID</span></th>
             <th><span jhiTranslate="qsTrabalhoDisciplinaApp.turma.disciplina">Disciplina</span></th>
             <th><span jhiTranslate="qsTrabalhoDisciplinaApp.turma.sala">Sala</span></th>
+            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.turma.horario">Horario</span></th>
             <th></th>
             </tr>
             </thead>
@@ -34,6 +35,11 @@
                     <div *ngIf="turma.sala">
                         <a [routerLink]="['../local', turma.sala?.id ]" >{{turma.sala?.id}}</a>
                     </div>
+                </td>
+                <td>
+                    <span *ngFor="let horario of turma.horarios; let last = last">
+                            <a class="form-control-static" [routerLink]="['../time-slot', horario?.id ]">{{horario.id}}</a>{{last ? '' : ', '}}
+                        </span>
                 </td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">

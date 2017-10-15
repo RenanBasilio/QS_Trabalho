@@ -84,7 +84,7 @@ public class TurmaResource {
     @Timed
     public List<Turma> getAllTurmas() {
         log.debug("REST request to get all Turmas");
-        return turmaRepository.findAll();
+        return turmaRepository.findAllWithEagerRelationships();
         }
 
     /**
@@ -97,7 +97,7 @@ public class TurmaResource {
     @Timed
     public ResponseEntity<Turma> getTurma(@PathVariable Long id) {
         log.debug("REST request to get Turma : {}", id);
-        Turma turma = turmaRepository.findOne(id);
+        Turma turma = turmaRepository.findOneWithEagerRelationships(id);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(turma));
     }
 

@@ -41,9 +41,6 @@ public class TimeSlot implements Serializable {
     @Column(name = "hora_fim", nullable = false)
     private Long horaFim;
 
-    @ManyToOne
-    private Turma turma;
-
     // jhipster-needle-entity-add-field - Jhipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -90,19 +87,6 @@ public class TimeSlot implements Serializable {
 
     public void setHoraFim(Long horaFim) {
         this.horaFim = horaFim;
-    }
-
-    public Turma getTurma() {
-        return turma;
-    }
-
-    public TimeSlot turma(Turma turma) {
-        this.turma = turma;
-        return this;
-    }
-
-    public void setTurma(Turma turma) {
-        this.turma = turma;
     }
     // jhipster-needle-entity-add-getters-setters - Jhipster will add getters and setters here, do not remove
 

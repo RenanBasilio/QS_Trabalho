@@ -16,6 +16,12 @@
                 <a [routerLink]="['/local', turma.sala?.id]">{{turma.sala?.id}}</a>
             </div>
         </dd>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.turma.horario">Horario</span></dt>
+        <dd>
+            <span *ngFor="let horario of turma.horarios; let last = last">
+                <a [routerLink]="['/time-slot', horario?.id ]">{{horario.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
     </dl>
 
     <button type="submit"

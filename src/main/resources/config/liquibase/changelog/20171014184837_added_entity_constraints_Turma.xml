@@ -20,5 +20,16 @@
                                  referencedColumnNames="id"
                                  referencedTableName="local"/>
 
+        <addForeignKeyConstraint baseColumnNames="turmas_id"
+                                 baseTableName="turma_horario"
+                                 constraintName="fk_turma_horario_turmas_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="turma"/>
+        <addForeignKeyConstraint baseColumnNames="horarios_id"
+                                 baseTableName="turma_horario"
+                                 constraintName="fk_turma_horario_horarios_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="time_slot"/>
+        
     </changeSet>
 </databaseChangeLog>
