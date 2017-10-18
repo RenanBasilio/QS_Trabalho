@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "disciplina",
+            "otherEntityName": "disciplina",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "turma"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "sala",
+            "otherEntityName": "local",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "turma"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "horario",
+            "otherEntityName": "timeSlot",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20171014184837",
+    "entityTableName": "turma",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

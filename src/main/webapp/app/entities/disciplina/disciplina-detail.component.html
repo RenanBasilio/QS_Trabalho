@@ -1,0 +1,67 @@
+
+<div *ngIf="disciplina">
+    <h2><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.detail.title">Disciplina</span> {{disciplina.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.codigo">Codigo</span></dt>
+        <dd>
+            <span>{{disciplina.codigo}}</span>
+        </dd>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.nome">Nome</span></dt>
+        <dd>
+            <span>{{disciplina.nome}}</span>
+        </dd>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.estado">Estado</span></dt>
+        <dd>
+            <span jhiTranslate="{{'qsTrabalhoDisciplinaApp.EstadoDisciplina.' + disciplina.estado}}">{{disciplina.estado}}</span>
+        </dd>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.trimestre">Trimestre</span></dt>
+        <dd>
+            <span>{{disciplina.trimestre}}</span>
+        </dd>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.cargaHoraria">Carga Horaria</span></dt>
+        <dd>
+            <span>{{disciplina.cargaHoraria}}</span>
+        </dd>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.creditos">Creditos</span></dt>
+        <dd>
+            <span>{{disciplina.creditos}}</span>
+        </dd>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.tipo">Tipo</span></dt>
+        <dd>
+            <span jhiTranslate="{{'qsTrabalhoDisciplinaApp.TipoDisciplina.' + disciplina.tipo}}">{{disciplina.tipo}}</span>
+        </dd>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.professor">Professor</span></dt>
+        <dd>
+            <div *ngIf="disciplina.professor">
+                <a [routerLink]="['/professor', disciplina.professor?.id]">{{disciplina.professor?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.programa">Programa</span></dt>
+        <dd>
+            <div *ngIf="disciplina.programa">
+                <a [routerLink]="['/programa', disciplina.programa?.id]">{{disciplina.programa?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.requisito">Requisito</span></dt>
+        <dd>
+            <span *ngFor="let requisito of disciplina.requisitos; let last = last">
+                <a [routerLink]="['/disciplina', requisito?.id ]">{{requisito.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'disciplina/'+ disciplina.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

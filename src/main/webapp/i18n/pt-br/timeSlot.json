@@ -1,0 +1,23 @@
+{
+    "qsTrabalhoDisciplinaApp": {
+        "timeSlot" : {
+            "home": {
+                "title": "Time Slots",
+                "createLabel": "Criar novo Time Slot",
+                "createOrEditLabel": "Criar ou editar Time Slot"
+            },
+            "created": "Um novo Time Slot foi criado com o identificador {{ param }}",
+            "updated": "Um Time Slot foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Time Slot foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Time Slot {{ id }}?"
+            },
+            "detail": {
+                "title": "Time Slot"
+            },
+            "dia": "Dia",
+            "horaInicio": "Hora Inicio",
+            "horaFim": "Hora Fim"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "pessoa",
+            "otherEntityName": "pessoa",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "aluno"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "matricula",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20171014184835",
+    "entityTableName": "aluno",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

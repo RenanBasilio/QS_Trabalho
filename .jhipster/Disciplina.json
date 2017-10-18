@@ -1,0 +1,71 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "professor",
+            "otherEntityName": "professor",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "disciplina"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "programa",
+            "otherEntityName": "programa",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "disciplina"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "requisito",
+            "otherEntityName": "disciplina",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "codigo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 6
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "EstadoDisciplina",
+            "fieldValues": "INSCRICAO,TRANCAMENTO,CORRENTE,FINALIZADA"
+        },
+        {
+            "fieldName": "trimestre",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cargaHoraria",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "creditos",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tipo",
+            "fieldType": "TipoDisciplina",
+            "fieldValues": "CURSO,PESQUISA"
+        }
+    ],
+    "changelogDate": "20171014184830",
+    "entityTableName": "disciplina",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

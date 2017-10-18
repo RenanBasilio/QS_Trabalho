@@ -1,0 +1,86 @@
+<div>
+    <h2>
+        <span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.home.title">Disciplinas</span>
+        <button class="btn btn-primary float-right jh-create-entity create-disciplina" [routerLink]="['/', { outlets: { popup: ['disciplina-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.home.createLabel">
+            Create new Disciplina
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="disciplinas">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.codigo">Codigo</span></th>
+            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.nome">Nome</span></th>
+            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.estado">Estado</span></th>
+            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.trimestre">Trimestre</span></th>
+            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.cargaHoraria">Carga Horaria</span></th>
+            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.creditos">Creditos</span></th>
+            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.tipo">Tipo</span></th>
+            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.professor">Professor</span></th>
+            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.programa">Programa</span></th>
+            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.requisito">Requisito</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let disciplina of disciplinas ;trackBy: trackId">
+                <td><a [routerLink]="['../disciplina', disciplina.id ]">{{disciplina.id}}</a></td>
+                <td>{{disciplina.codigo}}</td>
+                <td>{{disciplina.nome}}</td>
+                <td jhiTranslate="{{'qsTrabalhoDisciplinaApp.EstadoDisciplina.' + disciplina.estado}}">{{disciplina.estado}}</td>
+                <td>{{disciplina.trimestre}}</td>
+                <td>{{disciplina.cargaHoraria}}</td>
+                <td>{{disciplina.creditos}}</td>
+                <td jhiTranslate="{{'qsTrabalhoDisciplinaApp.TipoDisciplina.' + disciplina.tipo}}">{{disciplina.tipo}}</td>
+                <td>
+                    <div *ngIf="disciplina.professor">
+                        <a [routerLink]="['../professor', disciplina.professor?.id ]" >{{disciplina.professor?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="disciplina.programa">
+                        <a [routerLink]="['../programa', disciplina.programa?.id ]" >{{disciplina.programa?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <span *ngFor="let requisito of disciplina.requisitos; let last = last">
+                            <a class="form-control-static" [routerLink]="['../disciplina', requisito?.id ]">{{requisito.id}}</a>{{last ? '' : ', '}}
+                        </span>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../disciplina', disciplina.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'disciplina/'+ disciplina.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'disciplina/'+ disciplina.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

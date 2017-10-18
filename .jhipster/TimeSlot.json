@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "dia",
+            "fieldType": "DiaSemana",
+            "fieldValues": "DOMINGO,SEGUNDA,TERCA,QUARTA,QUINTA,SEXTA,SABADO",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "horaInicio",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 2400
+        },
+        {
+            "fieldName": "horaFim",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 2400
+        }
+    ],
+    "changelogDate": "20171014184831",
+    "entityTableName": "time_slot",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

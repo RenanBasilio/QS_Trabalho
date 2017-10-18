@@ -1,0 +1,24 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "pessoa",
+            "otherEntityName": "pessoa",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "professor"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "siape",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20171014184834",
+    "entityTableName": "professor",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

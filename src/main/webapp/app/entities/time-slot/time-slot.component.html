@@ -1,0 +1,60 @@
+<div>
+    <h2>
+        <span jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.home.title">Time Slots</span>
+        <button class="btn btn-primary float-right jh-create-entity create-time-slot" [routerLink]="['/', { outlets: { popup: ['time-slot-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.home.createLabel">
+            Create new Time Slot
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="timeSlots">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.dia">Dia</span></th>
+            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.horaInicio">Hora Inicio</span></th>
+            <th><span jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.horaFim">Hora Fim</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let timeSlot of timeSlots ;trackBy: trackId">
+                <td><a [routerLink]="['../time-slot', timeSlot.id ]">{{timeSlot.id}}</a></td>
+                <td jhiTranslate="{{'qsTrabalhoDisciplinaApp.DiaSemana.' + timeSlot.dia}}">{{timeSlot.dia}}</td>
+                <td>{{timeSlot.horaInicio}}</td>
+                <td>{{timeSlot.horaFim}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../time-slot', timeSlot.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'time-slot/'+ timeSlot.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'time-slot/'+ timeSlot.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

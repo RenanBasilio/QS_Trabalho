@@ -1,0 +1,19 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "sigla",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20171014184832",
+    "entityTableName": "programa",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

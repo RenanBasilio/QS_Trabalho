@@ -1,0 +1,41 @@
+
+<div *ngIf="inscricao">
+    <h2><span jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.detail.title">Inscricao</span> {{inscricao.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.status">Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'qsTrabalhoDisciplinaApp.EstadoInscricao.' + inscricao.status}}">{{inscricao.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.nota">Nota</span></dt>
+        <dd>
+            <span jhiTranslate="{{'qsTrabalhoDisciplinaApp.Nota.' + inscricao.nota}}">{{inscricao.nota}}</span>
+        </dd>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.aluno">Aluno</span></dt>
+        <dd>
+            <div *ngIf="inscricao.aluno">
+                <a [routerLink]="['/aluno', inscricao.aluno?.id]">{{inscricao.aluno?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.turma">Turma</span></dt>
+        <dd>
+            <div *ngIf="inscricao.turma">
+                <a [routerLink]="['/turma', inscricao.turma?.id]">{{inscricao.turma?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'inscricao/'+ inscricao.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

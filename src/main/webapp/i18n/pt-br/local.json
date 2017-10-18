@@ -1,0 +1,24 @@
+{
+    "qsTrabalhoDisciplinaApp": {
+        "local" : {
+            "home": {
+                "title": "Locals",
+                "createLabel": "Criar novo Local",
+                "createOrEditLabel": "Criar ou editar Local"
+            },
+            "created": "Um novo Local foi criado com o identificador {{ param }}",
+            "updated": "Um Local foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Local foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Local {{ id }}?"
+            },
+            "detail": {
+                "title": "Local"
+            },
+            "centro": "Centro",
+            "bloco": "Bloco",
+            "sala": "Sala",
+            "externo": "Externo"
+        }
+    }
+}
