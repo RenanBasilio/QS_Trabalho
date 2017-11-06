@@ -14,7 +14,7 @@ export const localRoute: Routes = [
         path: 'local',
         component: LocalComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.local.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -22,7 +22,7 @@ export const localRoute: Routes = [
         path: 'local/:id',
         component: LocalDetailComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.local.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -34,7 +34,7 @@ export const localPopupRoute: Routes = [
         path: 'local-new',
         component: LocalPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.local.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -44,7 +44,7 @@ export const localPopupRoute: Routes = [
         path: 'local/:id/edit',
         component: LocalPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.local.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -54,7 +54,7 @@ export const localPopupRoute: Routes = [
         path: 'local/:id/delete',
         component: LocalDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.local.home.title'
         },
         canActivate: [UserRouteAccessService],

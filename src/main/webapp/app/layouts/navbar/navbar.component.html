@@ -28,73 +28,67 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu>
-                    <li>
+                    <li *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_STUDENT', 'ROLE_PROFESSOR', 'ROLE_SECRETARY']">
                         <a class="dropdown-item" routerLink="disciplina" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.disciplina">Disciplina</span>
                         </a>
                     </li>
-                    <li>
+                    <li *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER',  'ROLE_SECRETARY']">
                         <a class="dropdown-item" routerLink="time-slot" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.timeSlot">Time Slot</span>
                         </a>
                     </li>
-                    <li>
+                    <li *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER',  'ROLE_SECRETARY']">
                         <a class="dropdown-item" routerLink="programa" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.programa">Programa</span>
                         </a>
                     </li>
-                    <li>
+                    <li *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER',  'ROLE_SECRETARY']">
                         <a class="dropdown-item" routerLink="pessoa" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.pessoa">Pessoa</span>
                         </a>
                     </li>
-                    <li>
+                    <li *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER',  'ROLE_SECRETARY']">
                         <a class="dropdown-item" routerLink="professor" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.professor">Professor</span>
                         </a>
                     </li>
-                    <li>
+                    <li *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER',  'ROLE_SECRETARY', 'ROLE_STUDENT']">
                         <a class="dropdown-item" routerLink="aluno" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.aluno">Aluno</span>
                         </a>
                     </li>
-                    <li>
+                    <li *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER',  'ROLE_SECRETARY']">
                         <a class="dropdown-item" routerLink="local" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.local">Local</span>
                         </a>
                     </li>
-                    <li>
-                        <a class="dropdown-item" routerLink="turma" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
-                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.entities.turma">Turma</span>
-                        </a>
-                    </li>
-                    <li>
+                    <li *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_STUDENT', 'ROLE_PROFESSOR', 'ROLE_SECRETARY']">
                         <a class="dropdown-item" routerLink="inscricao" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.inscricao">Inscricao</span>
                         </a>
                     </li>
-                    <li>
+                    <li *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_STUDENT', 'ROLE_PROFESSOR', 'ROLE_SECRETARY']">
                         <a class="dropdown-item" routerLink="disciplina" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.disciplina">Disciplina</span>
                         </a>
                     </li>
-                    <li>
+                    <li *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER',  'ROLE_SECRETARY']">
                         <a class="dropdown-item" routerLink="time-slot" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.timeSlot">Time Slot</span>
                         </a>
                     </li>
-                    <li>
+                    <li *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_STUDENT', 'ROLE_PROFESSOR', 'ROLE_SECRETARY']">
                         <a class="dropdown-item" routerLink="turma" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.turma">Turma</span>

@@ -14,7 +14,7 @@ export const inscricaoRoute: Routes = [
         path: 'inscricao',
         component: InscricaoComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY', 'ROLE_STUDENT'],
             pageTitle: 'qsTrabalhoDisciplinaApp.inscricao.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -22,7 +22,7 @@ export const inscricaoRoute: Routes = [
         path: 'inscricao/:id',
         component: InscricaoDetailComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY', 'ROLE_STUDENT'],
             pageTitle: 'qsTrabalhoDisciplinaApp.inscricao.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -34,7 +34,7 @@ export const inscricaoPopupRoute: Routes = [
         path: 'inscricao-new',
         component: InscricaoPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY', 'ROLE_STUDENT'],
             pageTitle: 'qsTrabalhoDisciplinaApp.inscricao.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -44,7 +44,7 @@ export const inscricaoPopupRoute: Routes = [
         path: 'inscricao/:id/edit',
         component: InscricaoPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY', 'ROLE_STUDENT'],
             pageTitle: 'qsTrabalhoDisciplinaApp.inscricao.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -54,7 +54,7 @@ export const inscricaoPopupRoute: Routes = [
         path: 'inscricao/:id/delete',
         component: InscricaoDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY', 'ROLE_STUDENT'],
             pageTitle: 'qsTrabalhoDisciplinaApp.inscricao.home.title'
         },
         canActivate: [UserRouteAccessService],

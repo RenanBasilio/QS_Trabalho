@@ -14,7 +14,7 @@ export const disciplinaRoute: Routes = [
         path: 'disciplina',
         component: DisciplinaComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.disciplina.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -22,7 +22,7 @@ export const disciplinaRoute: Routes = [
         path: 'disciplina/:id',
         component: DisciplinaDetailComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.disciplina.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -34,7 +34,7 @@ export const disciplinaPopupRoute: Routes = [
         path: 'disciplina-new',
         component: DisciplinaPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.disciplina.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -44,7 +44,7 @@ export const disciplinaPopupRoute: Routes = [
         path: 'disciplina/:id/edit',
         component: DisciplinaPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.disciplina.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -54,7 +54,7 @@ export const disciplinaPopupRoute: Routes = [
         path: 'disciplina/:id/delete',
         component: DisciplinaDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.disciplina.home.title'
         },
         canActivate: [UserRouteAccessService],

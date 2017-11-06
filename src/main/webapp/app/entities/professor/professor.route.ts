@@ -14,7 +14,7 @@ export const professorRoute: Routes = [
         path: 'professor',
         component: ProfessorComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.professor.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -22,7 +22,7 @@ export const professorRoute: Routes = [
         path: 'professor/:id',
         component: ProfessorDetailComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.professor.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -34,7 +34,7 @@ export const professorPopupRoute: Routes = [
         path: 'professor-new',
         component: ProfessorPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.professor.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -44,7 +44,7 @@ export const professorPopupRoute: Routes = [
         path: 'professor/:id/edit',
         component: ProfessorPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.professor.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -54,7 +54,7 @@ export const professorPopupRoute: Routes = [
         path: 'professor/:id/delete',
         component: ProfessorDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.professor.home.title'
         },
         canActivate: [UserRouteAccessService],
