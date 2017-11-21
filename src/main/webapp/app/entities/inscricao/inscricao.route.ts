@@ -14,7 +14,7 @@ export const inscricaoRoute: Routes = [
         path: 'inscricao',
         component: InscricaoComponent,
         data: {
-            authorities: ['ROLE_USER', 'ROLE_SECRETARY', 'ROLE_STUDENT'],
+            authorities: ['ROLE_USER', 'ROLE_STUDENT', 'ROLE_PROFESSOR', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.inscricao.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -22,7 +22,7 @@ export const inscricaoRoute: Routes = [
         path: 'inscricao/:id',
         component: InscricaoDetailComponent,
         data: {
-            authorities: ['ROLE_USER', 'ROLE_SECRETARY', 'ROLE_STUDENT'],
+            authorities: ['ROLE_USER', 'ROLE_STUDENT', 'ROLE_PROFESSOR', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.inscricao.home.title'
         },
         canActivate: [UserRouteAccessService]

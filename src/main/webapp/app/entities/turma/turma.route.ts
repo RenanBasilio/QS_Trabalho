@@ -14,7 +14,7 @@ export const turmaRoute: Routes = [
         path: 'turma',
         component: TurmaComponent,
         data: {
-            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
+            authorities: ['ROLE_USER', 'ROLE_STUDENT', 'ROLE_PROFESSOR', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.turma.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -22,7 +22,7 @@ export const turmaRoute: Routes = [
         path: 'turma/:id',
         component: TurmaDetailComponent,
         data: {
-            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
+            authorities: ['ROLE_USER', 'ROLE_STUDENT', 'ROLE_PROFESSOR', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.turma.home.title'
         },
         canActivate: [UserRouteAccessService]

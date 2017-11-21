@@ -1,7 +1,7 @@
 <div>
     <h2>
         <span jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.home.title">Time Slots</span>
-        <button class="btn btn-primary float-right jh-create-entity create-time-slot" [routerLink]="['/', { outlets: { popup: ['time-slot-new'] } }]">
+        <button *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_SECRETARY']" class="btn btn-primary float-right jh-create-entity create-time-slot" [routerLink]="['/', { outlets: { popup: ['time-slot-new'] } }]">
             <span class="fa fa-plus"></span>
             <span  jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.home.createLabel">
             Create new Time Slot

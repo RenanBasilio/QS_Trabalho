@@ -14,7 +14,7 @@ export const disciplinaRoute: Routes = [
         path: 'disciplina',
         component: DisciplinaComponent,
         data: {
-            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
+            authorities: ['ROLE_USER', 'ROLE_STUDENT', 'ROLE_PROFESSOR', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.disciplina.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -22,7 +22,7 @@ export const disciplinaRoute: Routes = [
         path: 'disciplina/:id',
         component: DisciplinaDetailComponent,
         data: {
-            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
+            authorities: ['ROLE_USER', 'ROLE_STUDENT', 'ROLE_PROFESSOR', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.disciplina.home.title'
         },
         canActivate: [UserRouteAccessService]

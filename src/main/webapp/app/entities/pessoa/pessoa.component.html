@@ -1,7 +1,7 @@
 <div>
     <h2>
         <span jhiTranslate="qsTrabalhoDisciplinaApp.pessoa.home.title">Pessoas</span>
-        <button class="btn btn-primary float-right jh-create-entity create-pessoa" [routerLink]="['/', { outlets: { popup: ['pessoa-new'] } }]">
+        <button *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_SECRETARY']" class="btn btn-primary float-right jh-create-entity create-pessoa" [routerLink]="['/', { outlets: { popup: ['pessoa-new'] } }]">
             <span class="fa fa-plus"></span>
             <span  jhiTranslate="qsTrabalhoDisciplinaApp.pessoa.home.createLabel">
             Create new Pessoa
