@@ -2,22 +2,22 @@
     "qsTrabalhoDisciplinaApp": {
         "turma" : {
             "home": {
-                "title": "Turmas",
-                "createLabel": "Create a new Turma",
-                "createOrEditLabel": "Create or edit a Turma"
+                "title": "Classes",
+                "createLabel": "Create a new Class",
+                "createOrEditLabel": "Create or edit a Class"
             },
-            "created": "A new Turma is created with identifier {{ param }}",
-            "updated": "A Turma is updated with identifier {{ param }}",
-            "deleted": "A Turma is deleted with identifier {{ param }}",
+            "created": "A new Class is created with identifier {{ param }}",
+            "updated": "A Class is updated with identifier {{ param }}",
+            "deleted": "A Class is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Turma {{ id }}?"
+                "question": "Are you sure you want to delete Class {{ id }}?"
             },
             "detail": {
-                "title": "Turma"
+                "title": "Class"
             },
-            "disciplina": "Disciplina",
-            "sala": "Sala",
-            "horario": "Horario"
+            "disciplina": "Course",
+            "sala": "Place",
+            "horario": "Schedule"
         }
     }
 }

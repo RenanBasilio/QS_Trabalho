@@ -15,9 +15,9 @@
             "detail": {
                 "title": "Time Slot"
             },
-            "dia": "Dia",
-            "horaInicio": "Hora Inicio",
-            "horaFim": "Hora Fim"
+            "dia": "Day",
+            "horaInicio": "Start Time",
+            "horaFim": "End Time"
         }
     }
 }

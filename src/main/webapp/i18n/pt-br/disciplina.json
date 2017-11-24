@@ -3,24 +3,24 @@
         "disciplina" : {
             "home": {
                 "title": "Disciplinas",
-                "createLabel": "Criar novo Disciplina",
+                "createLabel": "Criar nova Disciplina",
                 "createOrEditLabel": "Criar ou editar Disciplina"
             },
-            "created": "Um novo Disciplina foi criado com o identificador {{ param }}",
-            "updated": "Um Disciplina foi atualizado com o identificador {{ param }}",
-            "deleted": "Um Disciplina foi deletado com o identificador {{ param }}",
+            "created": "Uma nova Disciplina foi criada com o identificador {{ param }}",
+            "updated": "Uma Disciplina foi atualizada com o identificador {{ param }}",
+            "deleted": "Uma Disciplina foi deletada com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Disciplina {{ id }}?"
+                "question": "Tem certeza de que deseja excluir a Disciplina {{ id }}?"
             },
             "detail": {
                 "title": "Disciplina"
             },
-            "codigo": "Codigo",
+            "codigo": "Código",
             "nome": "Nome",
             "estado": "Estado",
             "trimestre": "Trimestre",
-            "cargaHoraria": "Carga Horaria",
-            "creditos": "Creditos",
+            "cargaHoraria": "Carga Horária",
+            "creditos": "Créditos",
             "tipo": "Tipo",
             "professor": "Professor",
             "programa": "Programa",

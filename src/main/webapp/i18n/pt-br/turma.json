@@ -3,21 +3,21 @@
         "turma" : {
             "home": {
                 "title": "Turmas",
-                "createLabel": "Criar novo Turma",
+                "createLabel": "Criar nova Turma",
                 "createOrEditLabel": "Criar ou editar Turma"
             },
-            "created": "Um novo Turma foi criado com o identificador {{ param }}",
-            "updated": "Um Turma foi atualizado com o identificador {{ param }}",
-            "deleted": "Um Turma foi deletado com o identificador {{ param }}",
+            "created": "Uma nova Turma foi criada com o identificador {{ param }}",
+            "updated": "Uma Turma foi atualizada com o identificador {{ param }}",
+            "deleted": "Uma Turma foi deletada com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Turma {{ id }}?"
+                "question": "Tem certeza de que deseja excluir a Turma {{ id }}?"
             },
             "detail": {
                 "title": "Turma"
             },
             "disciplina": "Disciplina",
             "sala": "Sala",
-            "horario": "Horario"
+            "horario": "Horário"
         }
     }
 }

@@ -2,29 +2,29 @@
     "qsTrabalhoDisciplinaApp": {
         "disciplina" : {
             "home": {
-                "title": "Disciplinas",
-                "createLabel": "Create a new Disciplina",
-                "createOrEditLabel": "Create or edit a Disciplina"
+                "title": "Courses",
+                "createLabel": "Create a new Course",
+                "createOrEditLabel": "Create or edit a Course"
             },
-            "created": "A new Disciplina is created with identifier {{ param }}",
-            "updated": "A Disciplina is updated with identifier {{ param }}",
-            "deleted": "A Disciplina is deleted with identifier {{ param }}",
+            "created": "A new Course is created with identifier {{ param }}",
+            "updated": "A Course is updated with identifier {{ param }}",
+            "deleted": "A Course is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Disciplina {{ id }}?"
+                "question": "Are you sure you want to delete Course {{ id }}?"
             },
             "detail": {
-                "title": "Disciplina"
+                "title": "Course"
             },
-            "codigo": "Codigo",
-            "nome": "Nome",
-            "estado": "Estado",
-            "trimestre": "Trimestre",
-            "cargaHoraria": "Carga Horaria",
-            "creditos": "Creditos",
-            "tipo": "Tipo",
+            "codigo": "Code",
+            "nome": "Name",
+            "estado": "Status",
+            "trimestre": "Trimester",
+            "cargaHoraria": "Workload",
+            "creditos": "Credits",
+            "tipo": "Type",
             "professor": "Professor",
-            "programa": "Programa",
-            "requisito": "Requisito"
+            "programa": "Program",
+            "requisito": "Requirement"
         }
     }
 }

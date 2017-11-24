@@ -2,13 +2,13 @@
     "qsTrabalhoDisciplinaApp": {
         "DiaSemana" : {
             "null": "",
-            "DOMINGO": "DOMINGO",
-            "SEGUNDA": "SEGUNDA",
-            "TERCA": "TERCA",
-            "QUARTA": "QUARTA",
-            "QUINTA": "QUINTA",
-            "SEXTA": "SEXTA",
-            "SABADO": "SABADO"
+            "DOMINGO": "Domingo",
+            "SEGUNDA": "Segunda",
+            "TERCA": "Terça",
+            "QUARTA": "Quarta",
+            "QUINTA": "Quinta",
+            "SEXTA": "Sexta",
+            "SABADO": "Sábado"
         }
     }
 }
