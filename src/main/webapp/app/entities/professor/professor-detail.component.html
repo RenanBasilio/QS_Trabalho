@@ -11,7 +11,7 @@
         <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.professor.pessoa">Pessoa</span></dt>
         <dd>
             <div *ngIf="professor.pessoa">
-                <a [routerLink]="['/pessoa', professor.pessoa?.id]">{{professor.pessoa?.id}}</a>
+                <a [routerLink]="['/pessoa', professor.pessoa?.id]">{{professor.pessoa?.nome}}</a>
             </div>
         </dd>
     </dl>

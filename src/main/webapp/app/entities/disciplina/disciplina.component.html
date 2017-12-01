@@ -42,12 +42,12 @@
                 <td jhiTranslate="{{'qsTrabalhoDisciplinaApp.TipoDisciplina.' + disciplina.tipo}}">{{disciplina.tipo}}</td>
                 <td>
                     <div *ngIf="disciplina.professor">
-                        <a [routerLink]="['../professor', disciplina.professor?.id ]" >{{disciplina.professor?.id}}</a>
+                        <a [routerLink]="['../professor', disciplina.professor?.id ]" >{{disciplina.professor?.pessoa.nome}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="disciplina.programa">
-                        <a [routerLink]="['../programa', disciplina.programa?.id ]" >{{disciplina.programa?.id}}</a>
+                        <a [routerLink]="['../programa', disciplina.programa?.id ]" >{{disciplina.programa?.sigla}}</a>
                     </div>
                 </td>
                 <td>

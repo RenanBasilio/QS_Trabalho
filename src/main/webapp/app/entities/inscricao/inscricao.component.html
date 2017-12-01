@@ -36,7 +36,7 @@
                 </td>
                 <td>
                     <div *ngIf="inscricao.turma">
-                        <a [routerLink]="['../turma', inscricao.turma?.id ]" >{{inscricao.turma?.id}}</a>
+                        <a [routerLink]="['../turma', inscricao.turma?.id ]" >{{inscricao.turma?.disciplina.codigo}} - {{inscricao.turma?.disciplina.nome}}</a>
                     </div>
                 </td>
                 <td class="text-right">

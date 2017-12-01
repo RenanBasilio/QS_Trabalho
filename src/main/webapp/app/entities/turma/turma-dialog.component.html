@@ -17,14 +17,14 @@
             <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.turma.disciplina" for="field_disciplina">Disciplina</label>
             <select class="form-control" id="field_disciplina" name="disciplina" [(ngModel)]="turma.disciplina">
                 <option [ngValue]="null"></option>
-                <option [ngValue]="disciplinaOption.id === turma.disciplina?.id ? turma.disciplina : disciplinaOption" *ngFor="let disciplinaOption of disciplinas; trackBy: trackDisciplinaById">{{disciplinaOption.id}}</option>
+                <option [ngValue]="disciplinaOption.id === turma.disciplina?.id ? turma.disciplina : disciplinaOption" *ngFor="let disciplinaOption of disciplinas; trackBy: trackDisciplinaById">{{disciplinaOption.codigo}} - {{disciplinaOption.nome}}</option>
             </select>
         </div>
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.turma.sala" for="field_sala">Sala</label>
             <select class="form-control" id="field_sala" name="sala" [(ngModel)]="turma.sala">
                 <option [ngValue]="null"></option>
-                <option [ngValue]="localOption.id === turma.sala?.id ? turma.sala : localOption" *ngFor="let localOption of salas; trackBy: trackLocalById">{{localOption.id}}</option>
+                <option [ngValue]="localOption.id === turma.sala?.id ? turma.sala : localOption" *ngFor="let localOption of salas; trackBy: trackLocalById">{{localOption.centro}} - {{localOption.bloco}}{{localOption.sala}}</option>
             </select>
         </div>
         <div class="form-group">

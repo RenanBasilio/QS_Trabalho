@@ -28,12 +28,12 @@
                 <td><a [routerLink]="['../turma', turma.id ]">{{turma.id}}</a></td>
                 <td>
                     <div *ngIf="turma.disciplina">
-                        <a [routerLink]="['../disciplina', turma.disciplina?.id ]" >{{turma.disciplina?.id}}</a>
+                        <a [routerLink]="['../disciplina', turma.disciplina?.id ]" >{{turma.disciplina?.codigo}} - {{turma.disciplina?.nome}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="turma.sala">
-                        <a [routerLink]="['../local', turma.sala?.id ]" >{{turma.sala?.id}}</a>
+                        <a [routerLink]="['../local', turma.sala?.id ]" >{{turma.sala?.centro}} - {{turma.sala?.bloco}}{{turma.sala?.sala}}</a>
                     </div>
                 </td>
                 <td>

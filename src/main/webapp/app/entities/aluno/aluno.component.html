@@ -28,7 +28,7 @@
                 <td>{{aluno.matricula}}</td>
                 <td>
                     <div *ngIf="aluno.pessoa">
-                        <a [routerLink]="['../pessoa', aluno.pessoa?.id ]" >{{aluno.pessoa?.id}}</a>
+                        <a [routerLink]="['../pessoa', aluno.pessoa?.id ]" >{{aluno.pessoa?.nome}}</a>
                     </div>
                 </td>
                 <td class="text-right">

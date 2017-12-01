@@ -28,7 +28,7 @@
                 <td>{{professor.siape}}</td>
                 <td>
                     <div *ngIf="professor.pessoa">
-                        <a [routerLink]="['../pessoa', professor.pessoa?.id ]" >{{professor.pessoa?.id}}</a>
+                        <a [routerLink]="['../pessoa', professor.pessoa?.id ]" >{{professor.pessoa?.nome}}</a>
                     </div>
                 </td>
                 <td class="text-right">
