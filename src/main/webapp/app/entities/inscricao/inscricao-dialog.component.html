@@ -12,7 +12,7 @@
             <input type="text" class="form-control" id="id" name="id"
                    [(ngModel)]="inscricao.id" readonly />
         </div>
-        <div class="form-group">
+        <div class="form-group" *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_PROFESSOR', 'ROLE_SECRETARY']">
             <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.status" for="field_status">Status</label>
             <select class="form-control" name="status" [(ngModel)]="inscricao.status" id="field_status" >
                 <option value="NORMAL">{{'qsTrabalhoDisciplinaApp.EstadoInscricao.NORMAL' | translate}}</option>
@@ -21,7 +21,16 @@
                 <option value="RECUSADA">{{'qsTrabalhoDisciplinaApp.EstadoInscricao.RECUSADA' | translate}}</option>
             </select>
         </div>
-        <div class="form-group">
+        <div class="form-group" *jhiHasAnyAuthority="['ROLE_STUDENT']">
+            <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.status" for="field_status">Status</label>
+            <select class="form-control" name="status" [(ngModel)]="inscricao.status" id="field_status" disabled="disabled">
+                <option value="NORMAL">{{'qsTrabalhoDisciplinaApp.EstadoInscricao.NORMAL' | translate}}</option>
+                <option value="PENDENTE">{{'qsTrabalhoDisciplinaApp.EstadoInscricao.PENDENTE' | translate}}</option>
+                <option value="TRANCADA">{{'qsTrabalhoDisciplinaApp.EstadoInscricao.TRANCADA' | translate}}</option>
+                <option value="RECUSADA">{{'qsTrabalhoDisciplinaApp.EstadoInscricao.RECUSADA' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group" *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_PROFESSOR', 'ROLE_SECRETARY']">
             <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.nota" for="field_nota">Nota</label>
             <select class="form-control" name="nota" [(ngModel)]="inscricao.nota" id="field_nota" >
                 <option value="A">{{'qsTrabalhoDisciplinaApp.Nota.A' | translate}}</option>
@@ -31,7 +40,7 @@
             </select>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_PROFESSOR', 'ROLE_SECRETARY']">
             <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.aluno" for="field_aluno">Aluno</label>
             <select class="form-control" id="field_aluno" name="aluno" [(ngModel)]="inscricao.aluno">
                 <option [ngValue]="null"></option>
