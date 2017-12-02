@@ -27,7 +27,7 @@
                 <br>
                 <font size="2">
                     <span *ngFor="let horario of inscricao.turma?.horarios; let last = last">
-                            {{inscricao.turma?.sala?.centro}} {{inscricao.turma?.sala?.bloco}}{{inscricao.turma?.sala?.sala}}
+                            {{inscricao.turma?.sala?.centro}} {{inscricao.turma?.sala?.bloco}}{{inscricao.turma?.sala?.sala}} :
                             {{horario.dia}}, {{horario.horaInicio}}-{{horario.horaFim}}
                             <br>
                     </span>
