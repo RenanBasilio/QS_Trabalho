@@ -10,12 +10,10 @@
             "otherEntityRelationshipName": "inscricao"
         },
         {
-            "relationshipType": "one-to-one",
             "relationshipName": "turma",
             "otherEntityName": "turma",
-            "otherEntityField": "id",
-            "ownerSide": true,
-            "otherEntityRelationshipName": "inscricao"
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         }
     ],
     "fields": [
@@ -31,8 +29,9 @@
         }
     ],
     "changelogDate": "20171014184838",
-    "entityTableName": "inscricao",
     "dto": "no",
-    "pagination": "no",
-    "service": "no"
+    "service": "no",
+    "entityTableName": "inscricao",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
 }

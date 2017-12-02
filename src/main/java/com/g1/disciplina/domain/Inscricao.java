@@ -37,8 +37,7 @@ public class Inscricao implements Serializable {
     @JoinColumn(unique = true)
     private Aluno aluno;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
     private Turma turma;
 
     // jhipster-needle-entity-add-field - Jhipster will add fields here, do not remove

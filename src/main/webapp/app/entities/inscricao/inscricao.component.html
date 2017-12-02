@@ -31,7 +31,7 @@
                 <td jhiTranslate="{{'qsTrabalhoDisciplinaApp.Nota.' + inscricao.nota}}">{{inscricao.nota}}</td>
                 <td>
                     <div *ngIf="inscricao.aluno">
-                        <a [routerLink]="['../aluno', inscricao.aluno?.id ]" >{{inscricao.aluno?.id}}</a>
+                        <a [routerLink]="['../aluno', inscricao.aluno?.id ]" >{{inscricao.aluno?.pessoa.nome}}</a>
                     </div>
                 </td>
                 <td>

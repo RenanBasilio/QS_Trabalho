@@ -51,19 +51,8 @@ export class InscricaoDialogComponent implements OnInit {
                         }, (subRes: ResponseWrapper) => this.onError(subRes.json));
                 }
             }, (res: ResponseWrapper) => this.onError(res.json));
-        this.turmaService
-            .query({filter: 'inscricao-is-null'})
-            .subscribe((res: ResponseWrapper) => {
-                if (!this.inscricao.turma || !this.inscricao.turma.id) {
-                    this.turmas = res.json;
-                } else {
-                    this.turmaService
-                        .find(this.inscricao.turma.id)
-                        .subscribe((subRes: Turma) => {
-                            this.turmas = [subRes].concat(res.json);
-                        }, (subRes: ResponseWrapper) => this.onError(subRes.json));
-                }
-            }, (res: ResponseWrapper) => this.onError(res.json));
+        this.turmaService.query()
+            .subscribe((res: ResponseWrapper) => { this.turmas = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
     }
 
     clear() {
