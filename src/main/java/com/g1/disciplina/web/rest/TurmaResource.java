@@ -101,7 +101,19 @@ public class TurmaResource {
           for (Turma turma : retrievedList)
           {
 
-              if ( turma.getDisciplina().getProfessor().getPessoa().getUser().getLogin().equals(currentUserLogin) )
+              String turmaLogin = "";
+
+              try
+              {
+                turmaLogin = turma.getDisciplina().getProfessor().getPessoa().getUser().getLogin();
+              }
+
+              catch(NullPointerException e)
+              {
+                System.out.println(e);
+              }
+
+              if ( turmaLogin.equals(currentUserLogin) )
               {
                 returnList.add(turma);
               }
