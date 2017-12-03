@@ -14,7 +14,7 @@ export const pessoaRoute: Routes = [
         path: 'pessoa',
         component: PessoaComponent,
         data: {
-            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
+            authorities: ['ROLE_USER'],
             pageTitle: 'qsTrabalhoDisciplinaApp.pessoa.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -22,7 +22,7 @@ export const pessoaRoute: Routes = [
         path: 'pessoa/:id',
         component: PessoaDetailComponent,
         data: {
-            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
+            authorities: ['ROLE_USER'],
             pageTitle: 'qsTrabalhoDisciplinaApp.pessoa.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -34,7 +34,7 @@ export const pessoaPopupRoute: Routes = [
         path: 'pessoa-new',
         component: PessoaPopupComponent,
         data: {
-            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
+            authorities: ['ROLE_USER'],
             pageTitle: 'qsTrabalhoDisciplinaApp.pessoa.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -44,7 +44,7 @@ export const pessoaPopupRoute: Routes = [
         path: 'pessoa/:id/edit',
         component: PessoaPopupComponent,
         data: {
-            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
+            authorities: ['ROLE_USER'],
             pageTitle: 'qsTrabalhoDisciplinaApp.pessoa.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -54,7 +54,7 @@ export const pessoaPopupRoute: Routes = [
         path: 'pessoa/:id/delete',
         component: PessoaDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
+            authorities: ['ROLE_USER'],
             pageTitle: 'qsTrabalhoDisciplinaApp.pessoa.home.title'
         },
         canActivate: [UserRouteAccessService],

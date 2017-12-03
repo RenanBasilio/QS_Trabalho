@@ -17,6 +17,13 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
+//para recuperar turmas do professor
+import com.g1.disciplina.security.SecurityUtils;
+import com.g1.disciplina.security.AuthoritiesConstants;
+import java.util.ArrayList;
+import java.util.Set;
+import com.g1.disciplina.repository.UserRepository;
+
 /**
  * REST controller for managing Turma.
  */
@@ -84,8 +91,30 @@ public class TurmaResource {
     @Timed
     public List<Turma> getAllTurmas() {
         log.debug("REST request to get all Turmas");
-        return turmaRepository.findAllWithEagerRelationships();
+
+        if ( SecurityUtils.isCurrentUserInRole(AuthoritiesConstants.PROFESSOR) )
+        {
+          String currentUserLogin = SecurityUtils.getCurrentUserLogin();
+          List<Turma> retrievedList = turmaRepository.findAllWithEagerRelationships();
+          ArrayList returnList = new ArrayList<Turma>();
+
+          for (Turma turma : retrievedList)
+          {
+
+              if ( turma.getDisciplina().getProfessor().getPessoa().getUser().getLogin().equals(currentUserLogin) )
+              {
+                returnList.add(turma);
+              }
+
+          }
+
+          return returnList;
+
         }
+
+        else return turmaRepository.findAllWithEagerRelationships();
+    }
+
 
     /**
      * GET  /turmas/:id : get the "id" turma.

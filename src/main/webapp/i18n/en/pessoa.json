@@ -2,21 +2,22 @@
     "qsTrabalhoDisciplinaApp": {
         "pessoa" : {
             "home": {
-                "title": "People",
-                "createLabel": "Create a new Person",
-                "createOrEditLabel": "Create or edit a Person"
+                "title": "Pessoas",
+                "createLabel": "Create a new Pessoa",
+                "createOrEditLabel": "Create or edit a Pessoa"
             },
-            "created": "A new Person is created with identifier {{ param }}",
-            "updated": "A Person is updated with identifier {{ param }}",
-            "deleted": "A Person is deleted with identifier {{ param }}",
+            "created": "A new Pessoa is created with identifier {{ param }}",
+            "updated": "A Pessoa is updated with identifier {{ param }}",
+            "deleted": "A Pessoa is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Person {{ id }}?"
+                "question": "Are you sure you want to delete Pessoa {{ id }}?"
             },
             "detail": {
-                "title": "Person"
+                "title": "Pessoa"
             },
-            "nome": "Name",
-            "email": "E-mail"
+            "nome": "Nome",
+            "email": "Email",
+            "user": "User"
         }
     }
 }

@@ -16,6 +16,7 @@
                 "local": "Place",
                 "turma": "Class",
                 "inscricao": "Subscription",
+                "pessoa": "Pessoa",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

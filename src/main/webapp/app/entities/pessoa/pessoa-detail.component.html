@@ -12,6 +12,10 @@
         <dd>
             <span>{{pessoa.email}}</span>
         </dd>
+        <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.pessoa.user">User</span></dt>
+        <dd>
+            {{pessoa.user?.login}}
+        </dd>
     </dl>
 
     <button type="submit"

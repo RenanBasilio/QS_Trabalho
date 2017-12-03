@@ -3,12 +3,12 @@
         "pessoa" : {
             "home": {
                 "title": "Pessoas",
-                "createLabel": "Criar nova Pessoa",
+                "createLabel": "Criar novo Pessoa",
                 "createOrEditLabel": "Criar ou editar Pessoa"
             },
-            "created": "Uma nova Pessoa foi criada com o identificador {{ param }}",
-            "updated": "Uma Pessoa foi atualizada com o identificador {{ param }}",
-            "deleted": "Uma Pessoa foi deletada com o identificador {{ param }}",
+            "created": "Um novo Pessoa foi criado com o identificador {{ param }}",
+            "updated": "Um Pessoa foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Pessoa foi deletado com o identificador {{ param }}",
             "delete": {
                 "question": "Tem certeza de que deseja excluir Pessoa {{ id }}?"
             },
@@ -16,7 +16,8 @@
                 "title": "Pessoa"
             },
             "nome": "Nome",
-            "email": "E-mail"
+            "email": "Email",
+            "user": "User"
         }
     }
 }
