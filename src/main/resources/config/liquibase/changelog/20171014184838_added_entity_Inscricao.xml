@@ -29,6 +29,10 @@
             <column name="nota" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+
+            <column name="notificado" type="bit">
+                <constraints nullable="true" />
+            </column>
             <column name="aluno_id" type="bigint">
                 <constraints unique="true" nullable="true" />
             </column>

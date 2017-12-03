@@ -26,6 +26,10 @@
             "fieldName": "nota",
             "fieldType": "Nota",
             "fieldValues": "A,B,C,D"
+        },
+        {
+            "fieldName": "notificado",
+            "fieldType": "Boolean"
         }
     ],
     "changelogDate": "20171014184838",

@@ -45,6 +45,9 @@ public class InscricaoResourceIntTest {
     private static final Nota DEFAULT_NOTA = Nota.A;
     private static final Nota UPDATED_NOTA = Nota.B;
 
+    private static final Boolean DEFAULT_NOTIFICADO = false;
+    private static final Boolean UPDATED_NOTIFICADO = true;
+
     @Autowired
     private InscricaoRepository inscricaoRepository;
 
@@ -83,7 +86,8 @@ public class InscricaoResourceIntTest {
     public static Inscricao createEntity(EntityManager em) {
         Inscricao inscricao = new Inscricao()
             .status(DEFAULT_STATUS)
-            .nota(DEFAULT_NOTA);
+            .nota(DEFAULT_NOTA)
+            .notificado(DEFAULT_NOTIFICADO);
         return inscricao;
     }
 
@@ -109,6 +113,7 @@ public class InscricaoResourceIntTest {
         Inscricao testInscricao = inscricaoList.get(inscricaoList.size() - 1);
         assertThat(testInscricao.getStatus()).isEqualTo(DEFAULT_STATUS);
         assertThat(testInscricao.getNota()).isEqualTo(DEFAULT_NOTA);
+        assertThat(testInscricao.isNotificado()).isEqualTo(DEFAULT_NOTIFICADO);
     }
 
     @Test
@@ -142,7 +147,8 @@ public class InscricaoResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(inscricao.getId().intValue())))
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
-            .andExpect(jsonPath("$.[*].nota").value(hasItem(DEFAULT_NOTA.toString())));
+            .andExpect(jsonPath("$.[*].nota").value(hasItem(DEFAULT_NOTA.toString())))
+            .andExpect(jsonPath("$.[*].notificado").value(hasItem(DEFAULT_NOTIFICADO.booleanValue())));
     }
 
     @Test
@@ -157,7 +163,8 @@ public class InscricaoResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(inscricao.getId().intValue()))
             .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
-            .andExpect(jsonPath("$.nota").value(DEFAULT_NOTA.toString()));
+            .andExpect(jsonPath("$.nota").value(DEFAULT_NOTA.toString()))
+            .andExpect(jsonPath("$.notificado").value(DEFAULT_NOTIFICADO.booleanValue()));
     }
 
     @Test
@@ -179,7 +186,8 @@ public class InscricaoResourceIntTest {
         Inscricao updatedInscricao = inscricaoRepository.findOne(inscricao.getId());
         updatedInscricao
             .status(UPDATED_STATUS)
-            .nota(UPDATED_NOTA);
+            .nota(UPDATED_NOTA)
+            .notificado(UPDATED_NOTIFICADO);
 
         restInscricaoMockMvc.perform(put("/api/inscricaos")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -192,6 +200,7 @@ public class InscricaoResourceIntTest {
         Inscricao testInscricao = inscricaoList.get(inscricaoList.size() - 1);
         assertThat(testInscricao.getStatus()).isEqualTo(UPDATED_STATUS);
         assertThat(testInscricao.getNota()).isEqualTo(UPDATED_NOTA);
+        assertThat(testInscricao.isNotificado()).isEqualTo(UPDATED_NOTIFICADO);
     }
 
     @Test

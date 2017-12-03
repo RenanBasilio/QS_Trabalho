@@ -19,8 +19,10 @@ export class Inscricao implements BaseEntity {
         public id?: number,
         public status?: EstadoInscricao,
         public nota?: Nota,
+        public notificado?: boolean,
         public aluno?: BaseEntity,
         public turma?: BaseEntity,
     ) {
+        this.notificado = false;
     }
 }
