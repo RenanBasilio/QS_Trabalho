@@ -13,6 +13,7 @@ import { Disciplina, DisciplinaService } from '../disciplina';
 import { Local, LocalService } from '../local';
 import { TimeSlot, TimeSlotService } from '../time-slot';
 import { ResponseWrapper } from '../../shared';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
     selector: 'jhi-turma-dialog',
@@ -29,6 +30,8 @@ export class TurmaDialogComponent implements OnInit {
 
     timeslots: TimeSlot[];
 
+    horarios: TimeSlot[];
+
     constructor(
         public activeModal: NgbActiveModal,
         private alertService: JhiAlertService,
@@ -38,6 +41,19 @@ export class TurmaDialogComponent implements OnInit {
         private timeSlotService: TimeSlotService,
         private eventManager: JhiEventManager
     ) {
+    }
+
+    addTimeSlot() {
+        if (this.horarios === undefined) {
+            this.horarios = [];
+        }
+
+        this.horarios.push({});
+    }
+
+    removeTimeSlot(index) {
+        console.log(index);
+        this.horarios.splice(index, 1);
     }
 
     ngOnInit() {
@@ -78,6 +94,13 @@ export class TurmaDialogComponent implements OnInit {
 
     save() {
         this.isSaving = true;
+        if (this.horarios.length > 0) {
+            this.horarios.forEach((timeslot) => {
+                console.log(timeslot);
+                const observable = this.timeSlotService.create(timeslot);
+                console.log(observable);
+            });
+        }
         if (this.turma.id !== undefined) {
             this.subscribeToSaveResponse(
                 this.turmaService.update(this.turma));

@@ -20,6 +20,7 @@
                 <option [ngValue]="disciplinaOption.id === turma.disciplina?.id ? turma.disciplina : disciplinaOption" *ngFor="let disciplinaOption of disciplinas; trackBy: trackDisciplinaById">{{disciplinaOption.codigo}} - {{disciplinaOption.nome}}</option>
             </select>
         </div>
+
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.turma.sala" for="field_sala">Sala</label>
             <select class="form-control" id="field_sala" name="sala" [(ngModel)]="turma.sala">
@@ -27,11 +28,59 @@
                 <option [ngValue]="localOption.id === turma.sala?.id ? turma.sala : localOption" *ngFor="let localOption of salas; trackBy: trackLocalById">{{localOption.centro}} - {{localOption.bloco}}{{localOption.sala}}</option>
             </select>
         </div>
+
+        <!--
         <div class="form-group">
             <label jhiTranslate="qsTrabalhoDisciplinaApp.turma.horario" for="field_horario">Horario</label>
             <select class="form-control" id="field_horario" multiple name="horario" [(ngModel)]="turma.horarios">
                 <option [ngValue]="getSelected(turma.horarios, timeSlotOption)" *ngFor="let timeSlotOption of timeslots; trackBy: trackTimeSlotById">{{timeSlotOption.id}}</option>
             </select>
+        </div>
+        -->
+
+        <div class="form-group">
+            <label jhiTranslate="qsTrabalhoDisciplinaApp.turma.horario" for="field_horario">Horarios</label>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><span class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.dia" for="field_dia">Dia</span></th>
+                        <th><span class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.horaInicio" for="field_horaInicio">Hora de Início</span></th>
+                        <th><span class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.timeSlot.horaFim" for="field_horaFim">Hora de Fim</span></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let horario of horarios ; let i = index" [attr.data-index]="i">
+                        <td>
+                            <select class="form-control" name="dia" [(ngModel)]="horario.dia" id="field_dia" required>
+                                <option value="DOMINGO">{{'qsTrabalhoDisciplinaApp.DiaSemana.DOMINGO' | translate}}</option>
+                                <option value="SEGUNDA">{{'qsTrabalhoDisciplinaApp.DiaSemana.SEGUNDA' | translate}}</option>
+                                <option value="TERCA">{{'qsTrabalhoDisciplinaApp.DiaSemana.TERCA' | translate}}</option>
+                                <option value="QUARTA">{{'qsTrabalhoDisciplinaApp.DiaSemana.QUARTA' | translate}}</option>
+                                <option value="QUINTA">{{'qsTrabalhoDisciplinaApp.DiaSemana.QUINTA' | translate}}</option>
+                                <option value="SEXTA">{{'qsTrabalhoDisciplinaApp.DiaSemana.SEXTA' | translate}}</option>
+                                <option value="SABADO">{{'qsTrabalhoDisciplinaApp.DiaSemana.SABADO' | translate}}</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" name="horaInicio" id="field_horaInicio"
+                                [(ngModel)]="horario.horaInicio" required min="0" max="2400" />
+                        </td>
+                        <td>
+                            <input type="number" class="form-control" name="horaFim" id="field_horaFim"
+                                [(ngModel)]="horario.horaFim" required min="0" max="2400" />
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger" (click)="removeTimeSlot(i)">
+                                <span class="glyphicon glyphicon-minus"></span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-success" (click)="addTimeSlot()">
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
         </div>
     </div>
     <div class="modal-footer">

@@ -41,12 +41,13 @@ entity Local{
 }
 
 entity Turma{
-	
+
 }
 
 entity Inscricao{
 	status EstadoInscricao
     nota Nota
+    notificado Boolean
 }
 
 enum EstadoDisciplina {
