@@ -17,6 +17,13 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
+//para recuperar inscrições em turmas do professor
+import com.g1.disciplina.security.SecurityUtils;
+import com.g1.disciplina.security.AuthoritiesConstants;
+import java.util.ArrayList;
+import java.util.Set;
+import com.g1.disciplina.repository.UserRepository;
+
 /**
  * REST controller for managing Inscricao.
  */
@@ -84,7 +91,40 @@ public class InscricaoResource {
     @Timed
     public List<Inscricao> getAllInscricaos() {
         log.debug("REST request to get all Inscricaos");
-        return inscricaoRepository.findAll();
+
+        if ( SecurityUtils.isCurrentUserInRole(AuthoritiesConstants.PROFESSOR) )
+        {
+          String currentUserLogin = SecurityUtils.getCurrentUserLogin();
+          List<Inscricao> retrievedList = inscricaoRepository.findAll();
+          ArrayList returnList = new ArrayList<Inscricao>();
+
+          for (Inscricao inscricao : retrievedList)
+          {
+
+              String inscricaoLogin = "";
+
+              try
+              {
+                inscricaoLogin = inscricao.getTurma().getDisciplina().getProfessor().getPessoa().getUser().getLogin();
+              }
+
+              catch(NullPointerException e)
+              {
+                System.out.println(e);
+              }
+
+              if ( inscricaoLogin.equals(currentUserLogin) )
+              {
+                returnList.add(inscricao);
+              }
+
+          }
+
+          return returnList;
+
+        }
+
+        else return inscricaoRepository.findAll();
         }
 
     /**
