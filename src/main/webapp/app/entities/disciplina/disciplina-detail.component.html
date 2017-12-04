@@ -35,13 +35,13 @@
         <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.professor">Professor</span></dt>
         <dd>
             <div *ngIf="disciplina.professor">
-                <a [routerLink]="['/professor', disciplina.professor?.id]">{{disciplina.professor?.id}}</a>
+                <a [routerLink]="['/professor', disciplina.professor?.id]">{{disciplina.professor?.pessoa.nome}}</a>
             </div>
         </dd>
         <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.programa">Programa</span></dt>
         <dd>
             <div *ngIf="disciplina.programa">
-                <a [routerLink]="['/programa', disciplina.programa?.id]">{{disciplina.programa?.id}}</a>
+                <a [routerLink]="['/programa', disciplina.programa?.id]">{{disciplina.programa?.sigla}}</a>
             </div>
         </dd>
         <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.requisito">Requisito</span></dt>
@@ -58,7 +58,7 @@
         <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
     </button>
 
-    <button type="button"
+    <button *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_SECRETARY']" type="button"
             [routerLink]="['/', { outlets: { popup: 'disciplina/'+ disciplina.id + '/edit'} }]"
             replaceUrl="true"
             class="btn btn-primary">

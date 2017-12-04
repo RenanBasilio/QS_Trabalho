@@ -2,10 +2,10 @@
     "qsTrabalhoDisciplinaApp": {
         "EstadoDisciplina" : {
             "null": "",
-            "INSCRICAO": "INSCRICAO",
-            "TRANCAMENTO": "TRANCAMENTO",
-            "CORRENTE": "CORRENTE",
-            "FINALIZADA": "FINALIZADA"
+            "INSCRICAO": " Inscription",
+            "TRANCAMENTO": "Leave Of Absence",
+            "CORRENTE": "Current",
+            "FINALIZADA": "Finished"
         }
     }
 }

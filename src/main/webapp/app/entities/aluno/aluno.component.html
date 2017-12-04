@@ -1,7 +1,7 @@
 <div>
     <h2>
         <span jhiTranslate="qsTrabalhoDisciplinaApp.aluno.home.title">Alunos</span>
-        <button class="btn btn-primary float-right jh-create-entity create-aluno" [routerLink]="['/', { outlets: { popup: ['aluno-new'] } }]">
+        <button *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_SECRETARY']" class="btn btn-primary float-right jh-create-entity create-aluno" [routerLink]="['/', { outlets: { popup: ['aluno-new'] } }]">
             <span class="fa fa-plus"></span>
             <span  jhiTranslate="qsTrabalhoDisciplinaApp.aluno.home.createLabel">
             Create new Aluno
@@ -28,7 +28,7 @@
                 <td>{{aluno.matricula}}</td>
                 <td>
                     <div *ngIf="aluno.pessoa">
-                        <a [routerLink]="['../pessoa', aluno.pessoa?.id ]" >{{aluno.pessoa?.id}}</a>
+                        <a [routerLink]="['../pessoa', aluno.pessoa?.id ]" >{{aluno.pessoa?.nome}}</a>
                     </div>
                 </td>
                 <td class="text-right">

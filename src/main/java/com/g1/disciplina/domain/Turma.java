@@ -31,7 +31,7 @@ public class Turma implements Serializable {
     @JoinColumn(unique = true)
     private Local sala;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @JoinTable(name = "turma_horario",
                joinColumns = @JoinColumn(name="turmas_id", referencedColumnName="id"),

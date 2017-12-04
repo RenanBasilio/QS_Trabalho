@@ -22,7 +22,7 @@
             <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.professor.pessoa" for="field_pessoa">Pessoa</label>
             <select class="form-control" id="field_pessoa" name="pessoa" [(ngModel)]="professor.pessoa">
                 <option [ngValue]="null"></option>
-                <option [ngValue]="pessoaOption.id === professor.pessoa?.id ? professor.pessoa : pessoaOption" *ngFor="let pessoaOption of pessoas; trackBy: trackPessoaById">{{pessoaOption.id}}</option>
+                <option [ngValue]="pessoaOption.id === professor.pessoa?.id ? professor.pessoa : pessoaOption" *ngFor="let pessoaOption of pessoas; trackBy: trackPessoaById">{{pessoaOption.nome}}</option>
             </select>
         </div>
     </div>

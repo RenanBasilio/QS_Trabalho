@@ -2,23 +2,23 @@
     "qsTrabalhoDisciplinaApp": {
         "inscricao" : {
             "home": {
-                "title": "Inscricaos",
-                "createLabel": "Create a new Inscricao",
-                "createOrEditLabel": "Create or edit a Inscricao"
+                "title": "Subscriptions",
+                "createLabel": "Create a new Subscription",
+                "createOrEditLabel": "Create or edit a Subscription"
             },
-            "created": "A new Inscricao is created with identifier {{ param }}",
-            "updated": "A Inscricao is updated with identifier {{ param }}",
-            "deleted": "A Inscricao is deleted with identifier {{ param }}",
+            "created": "A new Subscription is created with identifier {{ param }}",
+            "updated": "A Subscription is updated with identifier {{ param }}",
+            "deleted": "A Subscription is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Inscricao {{ id }}?"
+                "question": "Are you sure you want to delete Subscription {{ id }}?"
             },
             "detail": {
-                "title": "Inscricao"
+                "title": "Subscription"
             },
             "status": "Status",
-            "nota": "Nota",
-            "aluno": "Aluno",
-            "turma": "Turma"
+            "nota": "Grade",
+            "aluno": "Student",
+            "turma": "Class"
         }
     }
 }

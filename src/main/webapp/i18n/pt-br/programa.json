@@ -10,7 +10,7 @@
             "updated": "Um Programa foi atualizado com o identificador {{ param }}",
             "deleted": "Um Programa foi deletado com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Programa {{ id }}?"
+                "question": "Tem certeza de que deseja excluir o Programa {{ id }}?"
             },
             "detail": {
                 "title": "Programa"

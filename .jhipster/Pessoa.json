@@ -1,6 +1,15 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "pessoa"
+        }
+    ],
     "fields": [
         {
             "fieldName": "nome",
@@ -15,8 +24,9 @@
         }
     ],
     "changelogDate": "20171014184833",
-    "entityTableName": "pessoa",
     "dto": "no",
-    "pagination": "no",
-    "service": "no"
+    "service": "no",
+    "entityTableName": "pessoa",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
 }

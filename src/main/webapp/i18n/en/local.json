@@ -2,23 +2,23 @@
     "qsTrabalhoDisciplinaApp": {
         "local" : {
             "home": {
-                "title": "Locals",
-                "createLabel": "Create a new Local",
-                "createOrEditLabel": "Create or edit a Local"
+                "title": "Places",
+                "createLabel": "Create a new Place",
+                "createOrEditLabel": "Create or edit a Place"
             },
-            "created": "A new Local is created with identifier {{ param }}",
-            "updated": "A Local is updated with identifier {{ param }}",
-            "deleted": "A Local is deleted with identifier {{ param }}",
+            "created": "A new Place is created with identifier {{ param }}",
+            "updated": "A Place is updated with identifier {{ param }}",
+            "deleted": "A Place is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Local {{ id }}?"
+                "question": "Are you sure you want to delete Place {{ id }}?"
             },
             "detail": {
-                "title": "Local"
+                "title": "Place"
             },
-            "centro": "Centro",
-            "bloco": "Bloco",
-            "sala": "Sala",
-            "externo": "Externo"
+            "centro": "Center",
+            "bloco": "Block",
+            "sala": "Room",
+            "externo": "External"
         }
     }
 }

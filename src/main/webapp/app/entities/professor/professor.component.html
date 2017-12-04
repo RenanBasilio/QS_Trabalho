@@ -1,7 +1,7 @@
 <div>
     <h2>
         <span jhiTranslate="qsTrabalhoDisciplinaApp.professor.home.title">Professors</span>
-        <button class="btn btn-primary float-right jh-create-entity create-professor" [routerLink]="['/', { outlets: { popup: ['professor-new'] } }]">
+        <button *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_SECRETARY']" class="btn btn-primary float-right jh-create-entity create-professor" [routerLink]="['/', { outlets: { popup: ['professor-new'] } }]">
             <span class="fa fa-plus"></span>
             <span  jhiTranslate="qsTrabalhoDisciplinaApp.professor.home.createLabel">
             Create new Professor
@@ -28,7 +28,7 @@
                 <td>{{professor.siape}}</td>
                 <td>
                     <div *ngIf="professor.pessoa">
-                        <a [routerLink]="['../pessoa', professor.pessoa?.id ]" >{{professor.pessoa?.id}}</a>
+                        <a [routerLink]="['../pessoa', professor.pessoa?.id ]" >{{professor.pessoa?.nome}}</a>
                     </div>
                 </td>
                 <td class="text-right">

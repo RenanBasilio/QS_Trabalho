@@ -2,21 +2,21 @@
     "qsTrabalhoDisciplinaApp": {
         "aluno" : {
             "home": {
-                "title": "Alunos",
-                "createLabel": "Create a new Aluno",
-                "createOrEditLabel": "Create or edit a Aluno"
+                "title": "Students",
+                "createLabel": "Create a new Student",
+                "createOrEditLabel": "Create or edit a Student"
             },
-            "created": "A new Aluno is created with identifier {{ param }}",
-            "updated": "A Aluno is updated with identifier {{ param }}",
-            "deleted": "A Aluno is deleted with identifier {{ param }}",
+            "created": "A new Student is created with identifier {{ param }}",
+            "updated": "A Student is updated with identifier {{ param }}",
+            "deleted": "A Student is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Aluno {{ id }}?"
+                "question": "Are you sure you want to delete Student {{ id }}?"
             },
             "detail": {
-                "title": "Aluno"
+                "title": "Student"
             },
-            "matricula": "Matricula",
-            "pessoa": "Pessoa"
+            "matricula": "Registry",
+            "pessoa": "Person"
         }
     }
 }

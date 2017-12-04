@@ -14,7 +14,7 @@ export const programaRoute: Routes = [
         path: 'programa',
         component: ProgramaComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.programa.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -22,7 +22,7 @@ export const programaRoute: Routes = [
         path: 'programa/:id',
         component: ProgramaDetailComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.programa.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -34,7 +34,7 @@ export const programaPopupRoute: Routes = [
         path: 'programa-new',
         component: ProgramaPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.programa.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -44,7 +44,7 @@ export const programaPopupRoute: Routes = [
         path: 'programa/:id/edit',
         component: ProgramaPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.programa.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -54,7 +54,7 @@ export const programaPopupRoute: Routes = [
         path: 'programa/:id/delete',
         component: ProgramaDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.programa.home.title'
         },
         canActivate: [UserRouteAccessService],

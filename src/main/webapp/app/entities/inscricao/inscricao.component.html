@@ -1,7 +1,7 @@
 <div>
     <h2>
         <span jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.home.title">Inscricaos</span>
-        <button class="btn btn-primary float-right jh-create-entity create-inscricao" [routerLink]="['/', { outlets: { popup: ['inscricao-new'] } }]">
+        <button *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_STUDENT', 'ROLE_SECRETARY']" class="btn btn-primary float-right jh-create-entity create-inscricao" [routerLink]="['/', { outlets: { popup: ['inscricao-new'] } }]">
             <span class="fa fa-plus"></span>
             <span  jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.home.createLabel">
             Create new Inscricao
@@ -31,12 +31,12 @@
                 <td jhiTranslate="{{'qsTrabalhoDisciplinaApp.Nota.' + inscricao.nota}}">{{inscricao.nota}}</td>
                 <td>
                     <div *ngIf="inscricao.aluno">
-                        <a [routerLink]="['../aluno', inscricao.aluno?.id ]" >{{inscricao.aluno?.id}}</a>
+                        <a [routerLink]="['../aluno', inscricao.aluno?.id ]" >{{inscricao.aluno?.pessoa.nome}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="inscricao.turma">
-                        <a [routerLink]="['../turma', inscricao.turma?.id ]" >{{inscricao.turma?.id}}</a>
+                        <a [routerLink]="['../turma', inscricao.turma?.id ]" >{{inscricao.turma?.disciplina.codigo}} - {{inscricao.turma?.disciplina.nome}}</a>
                     </div>
                 </td>
                 <td class="text-right">
@@ -54,7 +54,7 @@
                             <span class="fa fa-pencil"></span>
                             <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
                         </button>
-                        <button type="submit"
+                        <button *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_STUDENT', 'ROLE_SECRETARY']" type="submit"
                                 [routerLink]="['/', { outlets: { popup: 'inscricao/'+ inscricao.id + '/delete'} }]"
                                 replaceUrl="true"
                                 class="btn btn-danger btn-sm">

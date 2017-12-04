@@ -10,14 +10,14 @@
             "updated": "Um Time Slot foi atualizado com o identificador {{ param }}",
             "deleted": "Um Time Slot foi deletado com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Time Slot {{ id }}?"
+                "question": "Tem certeza de que deseja excluir o Time Slot {{ id }}?"
             },
             "detail": {
                 "title": "Time Slot"
             },
             "dia": "Dia",
-            "horaInicio": "Hora Inicio",
-            "horaFim": "Hora Fim"
+            "horaInicio": "Hora de Início",
+            "horaFim": "Hora de Fim"
         }
     }
 }

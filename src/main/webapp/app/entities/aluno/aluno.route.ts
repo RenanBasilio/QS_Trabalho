@@ -14,7 +14,7 @@ export const alunoRoute: Routes = [
         path: 'aluno',
         component: AlunoComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.aluno.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -22,7 +22,7 @@ export const alunoRoute: Routes = [
         path: 'aluno/:id',
         component: AlunoDetailComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.aluno.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -34,7 +34,7 @@ export const alunoPopupRoute: Routes = [
         path: 'aluno-new',
         component: AlunoPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.aluno.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -44,7 +44,7 @@ export const alunoPopupRoute: Routes = [
         path: 'aluno/:id/edit',
         component: AlunoPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.aluno.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -54,7 +54,7 @@ export const alunoPopupRoute: Routes = [
         path: 'aluno/:id/delete',
         component: AlunoDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.aluno.home.title'
         },
         canActivate: [UserRouteAccessService],

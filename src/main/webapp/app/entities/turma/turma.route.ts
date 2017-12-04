@@ -14,7 +14,7 @@ export const turmaRoute: Routes = [
         path: 'turma',
         component: TurmaComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_STUDENT', 'ROLE_PROFESSOR', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.turma.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -22,7 +22,7 @@ export const turmaRoute: Routes = [
         path: 'turma/:id',
         component: TurmaDetailComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_STUDENT', 'ROLE_PROFESSOR', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.turma.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -34,7 +34,7 @@ export const turmaPopupRoute: Routes = [
         path: 'turma-new',
         component: TurmaPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.turma.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -44,7 +44,7 @@ export const turmaPopupRoute: Routes = [
         path: 'turma/:id/edit',
         component: TurmaPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.turma.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -54,7 +54,7 @@ export const turmaPopupRoute: Routes = [
         path: 'turma/:id/delete',
         component: TurmaDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.turma.home.title'
         },
         canActivate: [UserRouteAccessService],

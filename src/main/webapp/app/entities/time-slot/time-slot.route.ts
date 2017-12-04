@@ -14,7 +14,7 @@ export const timeSlotRoute: Routes = [
         path: 'time-slot',
         component: TimeSlotComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.timeSlot.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -22,7 +22,7 @@ export const timeSlotRoute: Routes = [
         path: 'time-slot/:id',
         component: TimeSlotDetailComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.timeSlot.home.title'
         },
         canActivate: [UserRouteAccessService]
@@ -34,7 +34,7 @@ export const timeSlotPopupRoute: Routes = [
         path: 'time-slot-new',
         component: TimeSlotPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.timeSlot.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -44,7 +44,7 @@ export const timeSlotPopupRoute: Routes = [
         path: 'time-slot/:id/edit',
         component: TimeSlotPopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.timeSlot.home.title'
         },
         canActivate: [UserRouteAccessService],
@@ -54,7 +54,7 @@ export const timeSlotPopupRoute: Routes = [
         path: 'time-slot/:id/delete',
         component: TimeSlotDeletePopupComponent,
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_USER', 'ROLE_SECRETARY'],
             pageTitle: 'qsTrabalhoDisciplinaApp.timeSlot.home.title'
         },
         canActivate: [UserRouteAccessService],

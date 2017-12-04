@@ -2,7 +2,7 @@
     "qsTrabalhoDisciplinaApp": {
         "local" : {
             "home": {
-                "title": "Locals",
+                "title": "Locais",
                 "createLabel": "Criar novo Local",
                 "createOrEditLabel": "Criar ou editar Local"
             },
@@ -10,7 +10,7 @@
             "updated": "Um Local foi atualizado com o identificador {{ param }}",
             "deleted": "Um Local foi deletado com o identificador {{ param }}",
             "delete": {
-                "question": "Tem certeza de que deseja excluir Local {{ id }}?"
+                "question": "Tem certeza de que deseja excluir o Local {{ id }}?"
             },
             "detail": {
                 "title": "Local"

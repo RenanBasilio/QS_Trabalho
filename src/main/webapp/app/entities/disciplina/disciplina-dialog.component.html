@@ -68,14 +68,14 @@
             <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.professor" for="field_professor">Professor</label>
             <select class="form-control" id="field_professor" name="professor" [(ngModel)]="disciplina.professor">
                 <option [ngValue]="null"></option>
-                <option [ngValue]="professorOption.id === disciplina.professor?.id ? disciplina.professor : professorOption" *ngFor="let professorOption of professors; trackBy: trackProfessorById">{{professorOption.id}}</option>
+                <option [ngValue]="professorOption.id === disciplina.professor?.id ? disciplina.professor : professorOption" *ngFor="let professorOption of professors; trackBy: trackProfessorById">{{professorOption.pessoa.nome}}</option>
             </select>
         </div>
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.programa" for="field_programa">Programa</label>
             <select class="form-control" id="field_programa" name="programa" [(ngModel)]="disciplina.programa">
                 <option [ngValue]="null"></option>
-                <option [ngValue]="programaOption.id === disciplina.programa?.id ? disciplina.programa : programaOption" *ngFor="let programaOption of programas; trackBy: trackProgramaById">{{programaOption.id}}</option>
+                <option [ngValue]="programaOption.id === disciplina.programa?.id ? disciplina.programa : programaOption" *ngFor="let programaOption of programas; trackBy: trackProgramaById">{{programaOption.sigla}}</option>
             </select>
         </div>
         <div class="form-group">

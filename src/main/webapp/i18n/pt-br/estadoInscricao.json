@@ -2,10 +2,10 @@
     "qsTrabalhoDisciplinaApp": {
         "EstadoInscricao" : {
             "null": "",
-            "NORMAL": "NORMAL",
-            "PENDENTE": "PENDENTE",
-            "TRANCADA": "TRANCADA",
-            "RECUSADA": "RECUSADA"
+            "NORMAL": "Normal",
+            "PENDENTE": "Pendente",
+            "TRANCADA": "Trancada",
+            "RECUSADA": "Recusada"
         }
     }
 }

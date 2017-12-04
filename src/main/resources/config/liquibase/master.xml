@@ -21,5 +21,6 @@
     <include file="config/liquibase/changelog/20171014184835_added_entity_constraints_Aluno.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20171014184837_added_entity_constraints_Turma.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20171014184838_added_entity_constraints_Inscricao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20171014184833_added_entity_constraints_Pessoa.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

@@ -1,7 +1,7 @@
 <div>
     <h2>
         <span jhiTranslate="qsTrabalhoDisciplinaApp.turma.home.title">Turmas</span>
-        <button class="btn btn-primary float-right jh-create-entity create-turma" [routerLink]="['/', { outlets: { popup: ['turma-new'] } }]">
+        <button *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_SECRETARY']" class="btn btn-primary float-right jh-create-entity create-turma" [routerLink]="['/', { outlets: { popup: ['turma-new'] } }]">
             <span class="fa fa-plus"></span>
             <span  jhiTranslate="qsTrabalhoDisciplinaApp.turma.home.createLabel">
             Create new Turma
@@ -28,12 +28,12 @@
                 <td><a [routerLink]="['../turma', turma.id ]">{{turma.id}}</a></td>
                 <td>
                     <div *ngIf="turma.disciplina">
-                        <a [routerLink]="['../disciplina', turma.disciplina?.id ]" >{{turma.disciplina?.id}}</a>
+                        <a [routerLink]="['../disciplina', turma.disciplina?.id ]" >{{turma.disciplina?.codigo}} - {{turma.disciplina?.nome}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="turma.sala">
-                        <a [routerLink]="['../local', turma.sala?.id ]" >{{turma.sala?.id}}</a>
+                        <a [routerLink]="['../local', turma.sala?.id ]" >{{turma.sala?.centro}} - {{turma.sala?.bloco}}{{turma.sala?.sala}}</a>
                     </div>
                 </td>
                 <td>
@@ -56,7 +56,7 @@
                             <span class="fa fa-pencil"></span>
                             <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
                         </button>
-                        <button type="submit"
+                        <button *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_STUDENT', 'ROLE_SECRETARY']" type="submit"
                                 [routerLink]="['/', { outlets: { popup: 'turma/'+ turma.id + '/delete'} }]"
                                 replaceUrl="true"
                                 class="btn btn-danger btn-sm">

@@ -1,7 +1,7 @@
 <div>
     <h2>
         <span jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.home.title">Disciplinas</span>
-        <button class="btn btn-primary float-right jh-create-entity create-disciplina" [routerLink]="['/', { outlets: { popup: ['disciplina-new'] } }]">
+        <button *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_SECRETARY']" class="btn btn-primary float-right jh-create-entity create-disciplina" [routerLink]="['/', { outlets: { popup: ['disciplina-new'] } }]">
             <span class="fa fa-plus"></span>
             <span  jhiTranslate="qsTrabalhoDisciplinaApp.disciplina.home.createLabel">
             Create new Disciplina
@@ -42,12 +42,12 @@
                 <td jhiTranslate="{{'qsTrabalhoDisciplinaApp.TipoDisciplina.' + disciplina.tipo}}">{{disciplina.tipo}}</td>
                 <td>
                     <div *ngIf="disciplina.professor">
-                        <a [routerLink]="['../professor', disciplina.professor?.id ]" >{{disciplina.professor?.id}}</a>
+                        <a [routerLink]="['../professor', disciplina.professor?.id ]" >{{disciplina.professor?.pessoa.nome}}</a>
                     </div>
                 </td>
                 <td>
                     <div *ngIf="disciplina.programa">
-                        <a [routerLink]="['../programa', disciplina.programa?.id ]" >{{disciplina.programa?.id}}</a>
+                        <a [routerLink]="['../programa', disciplina.programa?.id ]" >{{disciplina.programa?.sigla}}</a>
                     </div>
                 </td>
                 <td>
@@ -63,14 +63,14 @@
                             <span class="fa fa-eye"></span>
                             <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
                         </button>
-                        <button type="submit"
+                        <button *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_SECRETARY']" type="submit"
                                 [routerLink]="['/', { outlets: { popup: 'disciplina/'+ disciplina.id + '/edit'} }]"
                                 replaceUrl="true"
                                 class="btn btn-primary btn-sm">
                             <span class="fa fa-pencil"></span>
                             <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
                         </button>
-                        <button type="submit"
+                        <button *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_SECRETARY']" type="submit"
                                 [routerLink]="['/', { outlets: { popup: 'disciplina/'+ disciplina.id + '/delete'} }]"
                                 replaceUrl="true"
                                 class="btn btn-danger btn-sm">

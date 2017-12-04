@@ -15,13 +15,23 @@
         <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.aluno">Aluno</span></dt>
         <dd>
             <div *ngIf="inscricao.aluno">
-                <a [routerLink]="['/aluno', inscricao.aluno?.id]">{{inscricao.aluno?.id}}</a>
+                <a [routerLink]="['/aluno', inscricao.aluno?.id]">{{inscricao.aluno?.pessoa.nome}}</a>
             </div>
         </dd>
         <dt><span jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.turma">Turma</span></dt>
         <dd>
             <div *ngIf="inscricao.turma">
-                <a [routerLink]="['/turma', inscricao.turma?.id]">{{inscricao.turma?.id}}</a>
+                <a [routerLink]="['/turma', inscricao.turma?.id]">
+                    {{inscricao.turma?.disciplina.codigo}} - {{inscricao.turma?.disciplina.nome}}
+                </a>
+                <br>
+                <font size="2">
+                    <span *ngFor="let horario of inscricao.turma?.horarios; let last = last">
+                            {{inscricao.turma?.sala?.centro}} {{inscricao.turma?.sala?.bloco}}{{inscricao.turma?.sala?.sala}} :
+                            {{horario.dia}}, {{horario.horaInicio}}-{{horario.horaFim}}
+                            <br>
+                    </span>
+                </font>
             </div>
         </dd>
     </dl>

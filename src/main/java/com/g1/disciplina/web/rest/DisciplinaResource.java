@@ -18,6 +18,14 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
+
+//para recuperar disciplinas do professor
+import com.g1.disciplina.security.SecurityUtils;
+import com.g1.disciplina.security.AuthoritiesConstants;
+import java.util.ArrayList;
+import java.util.Set;
+import com.g1.disciplina.repository.UserRepository;
+
 /**
  * REST controller for managing Disciplina.
  */
@@ -85,7 +93,42 @@ public class DisciplinaResource {
     @Timed
     public List<Disciplina> getAllDisciplinas() {
         log.debug("REST request to get all Disciplinas");
-        return disciplinaRepository.findAllWithEagerRelationships();
+
+        if ( SecurityUtils.isCurrentUserInRole(AuthoritiesConstants.PROFESSOR) )
+        {
+          String currentUserLogin = SecurityUtils.getCurrentUserLogin();
+          List<Disciplina> retrievedList = disciplinaRepository.findAllWithEagerRelationships();
+          ArrayList returnList = new ArrayList<Disciplina>();
+
+          for (Disciplina disciplina : retrievedList)
+          {
+
+              String disciplinaLogin = "";
+
+              try
+              {
+                disciplinaLogin = disciplina.getProfessor().getPessoa().getUser().getLogin();
+              }
+
+              catch(NullPointerException e)
+              {
+                System.out.println(e);
+              }
+
+              if ( disciplinaLogin.equals(currentUserLogin) )
+              {
+                returnList.add(disciplina);
+              }
+
+          }
+
+          return returnList;
+
+        }
+
+
+        else return disciplinaRepository.findAllWithEagerRelationships();
+
         }
 
     /**

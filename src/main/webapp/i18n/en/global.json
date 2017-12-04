@@ -7,15 +7,16 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
-                "disciplina": "Disciplina",
+                "disciplina": "Course",
                 "timeSlot": "Time Slot",
-                "programa": "Programa",
-                "pessoa": "Pessoa",
+                "programa": "Program",
+                "pessoa": "Person",
                 "professor": "Professor",
-                "aluno": "Aluno",
-                "local": "Local",
-                "turma": "Turma",
-                "inscricao": "Inscricao",
+                "aluno": "Student",
+                "local": "Place",
+                "turma": "Class",
+                "inscricao": "Subscription",
+                "pessoa": "Pessoa",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

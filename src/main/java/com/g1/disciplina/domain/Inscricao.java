@@ -33,12 +33,14 @@ public class Inscricao implements Serializable {
     @Column(name = "nota")
     private Nota nota;
 
+    @Column(name = "notificado")
+    private Boolean notificado;
+
     @OneToOne
     @JoinColumn(unique = true)
     private Aluno aluno;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
     private Turma turma;
 
     // jhipster-needle-entity-add-field - Jhipster will add fields here, do not remove
@@ -74,6 +76,19 @@ public class Inscricao implements Serializable {
 
     public void setNota(Nota nota) {
         this.nota = nota;
+    }
+
+    public Boolean isNotificado() {
+        return notificado;
+    }
+
+    public Inscricao notificado(Boolean notificado) {
+        this.notificado = notificado;
+        return this;
+    }
+
+    public void setNotificado(Boolean notificado) {
+        this.notificado = notificado;
     }
 
     public Aluno getAluno() {
@@ -129,6 +144,7 @@ public class Inscricao implements Serializable {
             "id=" + getId() +
             ", status='" + getStatus() + "'" +
             ", nota='" + getNota() + "'" +
+            ", notificado='" + isNotificado() + "'" +
             "}";
     }
 }
