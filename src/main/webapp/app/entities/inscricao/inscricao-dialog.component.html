@@ -45,7 +45,7 @@
                 <option [ngValue]="alunoOption.id === inscricao.aluno?.id ? inscricao.aluno : alunoOption" *ngFor="let alunoOption of alunos; trackBy: trackAlunoById">{{alunoOption.id}}</option>
             </select>
         </div>
-        <div class="form-group" *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_SECRETARY']">
+        <div class="form-group" *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_USER', 'ROLE_SECRETARY', 'ROLE_STUDENT']">
             <label class="form-control-label" jhiTranslate="qsTrabalhoDisciplinaApp.inscricao.turma" for="field_turma">Turma</label>
             <select class="form-control" id="field_turma" name="turma" [(ngModel)]="inscricao.turma">
                 <option [ngValue]="null"></option>
